@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+:root{
+--paper:#EFE6D4;
+--paper-2:#E5D9C1;
+--ink:#2B2420;
+--teal:#1E4A47;
+--teal-2:#163936;
+--terracotta:#B5522E;
+--terracotta-2:#963F22;
+--apricot:#E8A25D;
+--stamp-red:#9C2A2E;
+--cream-text:#F5EEDF;
+}
+
+body{
+background: var(--paper);
+color: var(--ink);
+font-family: 'Inter', sans-serif;
+}
