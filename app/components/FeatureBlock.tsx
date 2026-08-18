@@ -1,3 +1,5 @@
+﻿import Link from "next/link";
+
 type FeatureBlockProps = {
 tag: string;
 title: string;
@@ -8,6 +10,8 @@ textColor: string;
 badgeText: string;
 cardLabel: string;
 reverse?: boolean;
+href?: string;
+imageSrc?: string;
 };
 
 export default function FeatureBlock({
@@ -20,6 +24,8 @@ textColor,
 badgeText,
 cardLabel,
 reverse = false,
+href,
+imageSrc,
 }: FeatureBlockProps) {
 return (
 <section
@@ -62,6 +68,25 @@ marginBottom: "20px",
 <p style={{ fontSize: "1rem", lineHeight: 1.65, maxWidth: "440px", opacity: 0.9 }}>
 {description}
 </p>
+{href ? (
+<Link
+href={href}
+style={{
+marginTop: "28px",
+display: "inline-block",
+border: `1.5px solid ${textColor}`,
+color: textColor,
+padding: "16px 30px",
+borderRadius: "100px",
+fontWeight: 600,
+fontSize: "0.95rem",
+cursor: "pointer",
+textDecoration: "none",
+}}
+>
+{ctaText}
+</Link>
+) : (
 <div
 style={{
 marginTop: "28px",
@@ -77,6 +102,7 @@ cursor: "pointer",
 >
 {ctaText}
 </div>
+)}
 </div>
 
 <div style={{ direction: "ltr", position: "relative" }}>
@@ -85,13 +111,22 @@ style={{
 position: "relative",
 height: "380px",
 borderRadius: "24px",
-background: "rgba(245,238,223,0.08)",
-border: "1px solid rgba(245,238,223,0.25)",
+background: imageSrc ? "none" : "rgba(245,238,223,0.08)",
+border: imageSrc ? "none" : "1px solid rgba(245,238,223,0.25)",
 display: "flex",
 alignItems: "center",
 justifyContent: "center",
 }}
 >
+{imageSrc && (
+<div style={{ position: "absolute", inset: 0, borderRadius: "24px", overflow: "hidden" }}>
+<img
+src={imageSrc}
+alt={cardLabel}
+style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+/>
+</div>
+)}
 <div
 style={{
 position: "absolute",
@@ -110,10 +145,12 @@ textAlign: "center",
 transform: "rotate(12deg)",
 background: "var(--paper)",
 color: "var(--stamp-red)",
+zIndex: 2,
 }}
 >
 {badgeText}
 </div>
+{!imageSrc && (
 <span
 style={{
 fontFamily: "'Space Mono', monospace",
@@ -125,6 +162,7 @@ letterSpacing: "0.1em",
 >
 {cardLabel}
 </span>
+)}
 </div>
 </div>
 </section>

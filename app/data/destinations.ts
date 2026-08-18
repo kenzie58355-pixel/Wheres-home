@@ -1,0 +1,35 @@
+﻿export const destinations = [
+{
+slug: "la-paz",
+city: "La Paz",
+country: "Bolivia",
+countryCode: "BO",
+flag: "🇧🇴",
+region: "Altiplano",
+elevation: "3,600m",
+dogFriendliness: "8.7/10",
+guides: 4,
+itineraries: 2,
+heroGradient: "linear-gradient(160deg,#8a6a4a,#4a3a2a)",
+overviewTitle: "The city that rewrites your conditioning.",
+overview: "La Paz sits higher than any other capital city in the world, and it shows in everything, from how far your lungs get you up a hill to how the light hits the valley at golden hour. For travelers with dogs, it's more manageable than it looks, mild days, cool nights, and a growing number of cafes and parks that welcome them without a second glance.",
+stats: [
+{ label: "Dog-friendly spots", value: "14" },
+{ label: "Gyms and training spots", value: "6" },
+{ label: "Best time to visit", value: "Sept" },
+{ label: "Budget level", value: "$" },
+],
+ginger: {
+rating: "8.7",
+parksVisited: 3,
+cafesVisited: 2,
+groomingUsed: 1,
+favoritePlace: "Parque Urbano Central",
+},
+gyms: [
+{ name: "Altitud MMA and BJJ", area: "Los Pinos, drop-ins welcome" },
+{ name: "Kolping Boxing Club", area: "Sopocachi, beginner friendly" },
+{ name: "Andina CrossFit", area: "Calacoto, altitude-adjusted" },
+],
+},
+];
