@@ -5,7 +5,7 @@ import { entries } from "./data";
 
 export default function Journal() {
 const now = new Date();
-const isLive = (e) => !e.publishDate || new Date(e.publishDate) <= now;
+const isLive = (e: any) => !e.publishDate || new Date(e.publishDate) <= now;
 
 const live = entries.filter(isLive);
 const upcoming = entries.filter((e) => !isLive(e));
