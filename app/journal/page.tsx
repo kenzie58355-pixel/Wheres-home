@@ -48,7 +48,7 @@ return (
 ))}
 
 {upcoming.map((e, i) => {
-const daysLeft = Math.ceil((new Date(e.publishDate).getTime() - now.getTime()) / 86400000);
+const daysLeft = Math.ceil((new Date(e.publishDate || Date.now()).getTime() - now.getTime()) / 86400000);
 return (
 <div key={"up-" + i} style={{position:"relative",background:"var(--paper-2)",borderRadius:"14px",padding:"30px 26px 26px",opacity:0.55,cursor:"not-allowed",border:"1px dashed var(--line)"}}>
 <div style={{position:"absolute",top:"-14px",right:"18px",background:"var(--ink)",color:"var(--paper)",borderRadius:"100px",padding:"6px 14px",fontFamily:"'Space Mono',monospace",fontSize:"0.6rem",textTransform:"uppercase",letterSpacing:"0.06em"}}>
