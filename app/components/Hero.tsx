@@ -1,4 +1,9 @@
+﻿import Link from "next/link";
+import { journey } from "../data/journey";
+
 export default function Hero() {
+const arrived = new Date(journey.current.arrived).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+
 return (
 <section
 style={{
@@ -29,7 +34,7 @@ transform: "rotate(-2deg)",
 marginBottom: "28px",
 }}
 >
-Departure · La Paz · Aug 22
+{journey.current.flag} Currently in {journey.current.city}, since {arrived}
 </span>
 
 <h1
@@ -49,12 +54,13 @@ passport.
 </h1>
 
 <p style={{ marginTop: "26px", maxWidth: "520px", fontSize: "1.05rem", lineHeight: 1.6, opacity: 0.8 }}>
-Training through La Paz, Colombia, Brazil, and beyond — with Ginger riding shotgun.
+Training through {journey.current.country} now, with more of the route still unfolding, with Ginger riding shotgun.
 Follow the journey, then bring your own dog along with PawPass.
 </p>
 
 <div style={{ display: "flex", gap: "16px", marginTop: "40px", flexWrap: "wrap" }}>
-<div
+<Link
+href="/vlog"
 style={{
 background: "var(--ink)",
 color: "var(--paper)",
@@ -63,11 +69,13 @@ borderRadius: "100px",
 fontWeight: 600,
 fontSize: "0.95rem",
 cursor: "pointer",
+textDecoration: "none",
 }}
 >
 Watch the latest episode
-</div>
-<div
+</Link>
+<Link
+href="/pawpass"
 style={{
 border: "1.5px solid var(--ink)",
 color: "var(--ink)",
@@ -76,10 +84,11 @@ borderRadius: "100px",
 fontWeight: 600,
 fontSize: "0.95rem",
 cursor: "pointer",
+textDecoration: "none",
 }}
 >
 Explore PawPass
-</div>
+</Link>
 </div>
 </section>
 );

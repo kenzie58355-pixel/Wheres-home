@@ -4,6 +4,8 @@ import Link from "next/link";
 import { destinations } from "../data/destinations";
 
 export default function Destinations() {
+const realDestinations = destinations.filter((d) => d.dogFriendliness !== "N/A");
+
 return (
 <main>
 <Nav />
@@ -14,11 +16,13 @@ return (
 </section>
 <section style={{maxWidth:"1200px",margin:"0 auto",padding:"0 48px 90px"}}>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:"24px"}}>
-{destinations.map((d, i) => (
+{realDestinations.map((d, i) => (
 <Link key={i} href={"/destinations/" + d.slug} style={{textDecoration:"none",color:"inherit"}}>
 <div style={{background:"var(--paper-2)",borderRadius:"16px",overflow:"hidden",cursor:"pointer"}}>
 <div style={{height:"190px",background:d.heroGradient,position:"relative"}}>
-<span style={{position:"absolute",top:"14px",right:"14px",background:"rgba(247,242,231,0.9)",padding:"5px 12px",borderRadius:"100px",fontSize:"0.68rem",fontFamily:"'Space Mono',monospace"}}>Paw {d.dogFriendliness}</span>
+<span style={{position:"absolute",top:"14px",right:"14px",background:"rgba(247,242,231,0.9)",padding:"5px 12px",borderRadius:"100px",fontSize:"0.68rem",fontFamily:"'Space Mono',monospace"}}>
+{d.dogFriendliness === "TBD" ? "Coming Soon" : "Paw " + d.dogFriendliness}
+</span>
 </div>
 <div style={{padding:"20px"}}>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.7,display:"block",marginBottom:"6px"}}>{d.flag} {d.country}</span>

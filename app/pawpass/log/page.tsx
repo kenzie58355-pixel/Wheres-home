@@ -91,13 +91,14 @@ return (
 <section style={{maxWidth:"800px",margin:"0 auto",padding:"40px 48px 20px"}}>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.08em",color:"var(--terracotta)",display:"block",marginBottom:"10px"}}>Adventure Log</span>
 <h1 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(2rem,4.5vw,3rem)",fontWeight:600}}>The passport, filling in one stamp at a time.</h1>
-<p style={{marginTop:"14px",opacity:0.85,maxWidth:"560px"}}>{visitedCount} of {journey.countriesTotal} countries stamped, currently in {journey.current.country}, {upcomingCount} more already on the route. Tap any stamp for the story.</p>
+<p style={{marginTop:"14px",opacity:0.85,maxWidth:"560px"}}>{visitedCount} of {journey.countriesTotal} countries stamped, currently in {journey.current.country}, {upcomingCount} more already on the route. Not every plan works out, that&apos;s part of the log too. Tap any stamp for the story.</p>
 </section>
 
 <section style={{maxWidth:"1200px",margin:"0 auto",padding:"20px 48px 40px",display:"flex",gap:"24px",flexWrap:"wrap"}}>
 <div style={{display:"flex",alignItems:"center",gap:"8px",fontSize:"0.78rem"}}><div style={{width:"20px",height:"20px",borderRadius:"50%",border:"2px solid var(--stamp-red)",background:"var(--paper-2)"}}></div>Visited</div>
 <div style={{display:"flex",alignItems:"center",gap:"8px",fontSize:"0.78rem"}}><div style={{width:"20px",height:"20px",borderRadius:"50%",border:"2px solid var(--teal)",background:"var(--teal)"}}></div>Current</div>
 <div style={{display:"flex",alignItems:"center",gap:"8px",fontSize:"0.78rem"}}><div style={{width:"20px",height:"20px",borderRadius:"50%",border:"2px dashed var(--apricot)"}}></div>On the Route</div>
+<div style={{display:"flex",alignItems:"center",gap:"8px",fontSize:"0.78rem"}}><div style={{width:"20px",height:"20px",borderRadius:"50%",border:"2px dotted #999"}}></div>Attempted</div>
 <div style={{display:"flex",alignItems:"center",gap:"8px",fontSize:"0.78rem"}}><div style={{width:"20px",height:"20px",borderRadius:"50%",border:"1.5px solid var(--line)",opacity:0.6}}></div>Not Yet</div>
 </section>
 

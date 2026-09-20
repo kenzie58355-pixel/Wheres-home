@@ -1,46 +1,41 @@
-﻿import Nav from "../../components/Nav";
+﻿"use client";
+import { useState } from "react";
+import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import JourneyGlobe from "../../components/JourneyGlobe";
 import { journey } from "../../data/journey";
 
-const parks = [
-{ name: "White Rock Lake Dog Park", address: "8000 E Mockingbird Ln", rating: "4.6", note: "Separate areas for large and small dogs, plus direct lake access for pups who love to swim." },
-{ name: "NorthBark Dog Park", address: "4899 Gramercy Oaks Dr", rating: "4.5", note: "A 22-acre facility with separate enclosures, walking trails, and a fenced water pond." },
-{ name: "Bark Park Central", address: "2530 Commerce St, Deep Ellum", rating: "3.9", note: "A 1.2-acre off-leash park decorated with vibrant street murals." },
-];
-
-const shopping = [
-{ name: "Dallas Farmers Market", address: "920 S Harwood St", rating: "4.5", note: "Leashed dogs welcome in the open-air pavilion and outdoor patios. Lula Pup Shop is right inside for treats and accessories." },
-{ name: "The Upper Paw", address: "2809 Commerce St, Deep Ellum", rating: "4.8", note: "A boutique with premium pet foods, toys, apparel, and homemade bakery treats." },
-];
-
-const grooming = [
-{ name: "Uptown Pup Self-Wash", address: "2905 Thomas Ave", rating: "4.9", note: "DIY dog-washing stations fully stocked with professional shampoos, towels, brushes, and blow-dryers." },
-{ name: "Bruno's Place DIY Dog Wash", address: "1019 W Davis St, Oak Cliff", rating: "4.7", note: "Self-serve stainless steel tubs and high-velocity dryers." },
-];
-
-const upcoming = [
-{ city: "Bogota, Colombia" },
-{ city: "Rio de Janeiro, Brazil" },
-];
-
-function PlaceCard({ p }: { p: { name: string; address: string; rating: string; note: string } }) {
-return (
-<div style={{background:"var(--paper-2)",borderRadius:"14px",padding:"22px"}}>
-<div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"8px"}}>
-<h4 style={{fontFamily:"'Fraunces',serif",fontSize:"1.05rem"}}>{p.name}</h4>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",background:"var(--paper)",padding:"3px 10px",borderRadius:"100px"}}>Paw {p.rating}</span>
-</div>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.68rem",opacity:0.65,display:"block",marginBottom:"10px"}}>{p.address}</span>
-<p style={{fontSize:"0.85rem",opacity:0.85}}>{p.note}</p>
-</div>
-);
-}
+const cityData: Record<string, { flag: string; spots: { name: string; badge: string; note: string }[] }> = {
+Cali: {
+flag: "🇨🇴",
+spots: [
+{ name: "Parque de los Perros", badge: "Dog Park", note: "A proper off-leash dog park, open enough to spend a full afternoon at." },
+{ name: "A few smaller parks around Cali", badge: "Parks", note: "Scattered around the city, good for quick walks between everything else." },
+{ name: "Dog Camp Cali", badge: "Field Trip", note: "A dedicated dog camp, worth a full visit on its own." },
+{ name: "Jardin Plaza and the surrounding area", badge: "Shopping", note: "A real mall with dog-friendly outdoor areas nearby, easy to combine with a walk." },
+{ name: "Peluqueria Canina Mundo Peludo", badge: "Grooming", note: "Cra. 38c #1-54, Nueva Granada. A genuinely great groom, full write-up in the journal." },
+{ name: "The tunnels of Villamaria", badge: "Hike", note: "A last-minute hike that ended at a waterfall Ginger swam in. One of the best afternoons of the trip." },
+],
+},
+Dallas: {
+flag: "🇺🇸",
+spots: [
+{ name: "White Rock Lake Dog Park", badge: "Paw 4.6", note: "Separate areas for large and small dogs, plus direct lake access." },
+{ name: "NorthBark Dog Park", badge: "Paw 4.5", note: "A 22-acre facility with separate enclosures and a fenced water pond." },
+{ name: "Bark Park Central", badge: "Paw 3.9", note: "A 1.2-acre off-leash park decorated with vibrant street murals." },
+{ name: "Dallas Farmers Market", badge: "Paw 4.5", note: "Leashed dogs welcome in the open-air pavilion and outdoor patios." },
+{ name: "The Upper Paw", badge: "Paw 4.8", note: "A boutique with premium pet foods, toys, apparel, and bakery treats." },
+{ name: "Uptown Pup Self-Wash", badge: "Paw 4.9", note: "DIY dog-washing stations fully stocked with professional supplies." },
+],
+},
+};
 
 export default function Explore() {
+const [activeCity, setActiveCity] = useState("Cali");
 const visitedCount = journey.route.filter((r) => r.status === "visited").length;
 const currentCount = journey.route.filter((r) => r.status === "current").length;
 const upcomingCount = journey.route.filter((r) => r.status === "upcoming").length;
+const cities = Object.keys(cityData);
 
 return (
 <main>
@@ -62,38 +57,37 @@ return (
 <div><div style={{fontFamily:"'Fraunces',serif",fontSize:"1.6rem",fontWeight:600,opacity:0.4}}>?</div><div style={{fontSize:"0.7rem",opacity:0.7,textTransform:"uppercase",letterSpacing:"0.06em"}}>Planned</div></div>
 </section>
 
-<section style={{maxWidth:"1200px",margin:"0 auto",padding:"20px 48px 30px"}}>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.68rem",textTransform:"uppercase",letterSpacing:"0.08em",color:"var(--stamp-red)",display:"block",marginBottom:"20px"}}>Dallas, Texas, Live Now</span>
-</section>
-
-<section style={{maxWidth:"1200px",margin:"0 auto",padding:"0 48px 50px"}}>
-<h3 style={{fontFamily:"'Fraunces',serif",fontSize:"1.3rem",marginBottom:"18px"}}>Dog Parks and Green Spaces</h3>
-<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:"18px"}}>
-{parks.map((p, i) => <PlaceCard key={i} p={p} />)}
+<section style={{maxWidth:"1200px",margin:"0 auto",padding:"0 48px 30px"}}>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.68rem",textTransform:"uppercase",letterSpacing:"0.08em",color:"var(--terracotta)",display:"block",marginBottom:"20px"}}>Dog Friendly Directory</span>
+<div style={{display:"flex",gap:"10px",marginBottom:"30px",flexWrap:"wrap"}}>
+{cities.map((city) => (
+<button
+key={city}
+onClick={() => setActiveCity(city)}
+style={{
+fontFamily: "'Space Mono', monospace",
+fontSize: "0.8rem",
+padding: "10px 20px",
+borderRadius: "100px",
+border: activeCity === city ? "none" : "1.5px solid var(--line)",
+background: activeCity === city ? "var(--ink)" : "transparent",
+color: activeCity === city ? "var(--paper)" : "var(--ink)",
+cursor: "pointer",
+fontWeight: 600,
+}}
+>
+{cityData[city].flag} {city}
+</button>
+))}
 </div>
-</section>
-
-<section style={{maxWidth:"1200px",margin:"0 auto",padding:"0 48px 50px"}}>
-<h3 style={{fontFamily:"'Fraunces',serif",fontSize:"1.3rem",marginBottom:"18px"}}>Shopping and Markets</h3>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:"18px"}}>
-{shopping.map((p, i) => <PlaceCard key={i} p={p} />)}
+{cityData[activeCity].spots.map((p, i) => (
+<div key={i} style={{background:"var(--paper-2)",borderRadius:"14px",padding:"22px"}}>
+<div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"8px"}}>
+<h4 style={{fontFamily:"'Fraunces',serif",fontSize:"1.05rem",maxWidth:"70%"}}>{p.name}</h4>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",background:"var(--paper)",padding:"3px 10px",borderRadius:"100px",whiteSpace:"nowrap"}}>{p.badge}</span>
 </div>
-</section>
-
-<section style={{maxWidth:"1200px",margin:"0 auto",padding:"0 48px 70px"}}>
-<h3 style={{fontFamily:"'Fraunces',serif",fontSize:"1.3rem",marginBottom:"18px"}}>Grooming and Self-Wash</h3>
-<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:"18px"}}>
-{grooming.map((p, i) => <PlaceCard key={i} p={p} />)}
-</div>
-</section>
-
-<section style={{maxWidth:"1200px",margin:"0 auto",padding:"0 48px 90px"}}>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.68rem",textTransform:"uppercase",letterSpacing:"0.08em",opacity:0.6,display:"block",marginBottom:"20px"}}>More Cities, Coming As We Travel</span>
-<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))",gap:"18px"}}>
-{upcoming.map((u, i) => (
-<div key={i} style={{background:"var(--paper-2)",border:"1px dashed var(--line)",borderRadius:"14px",padding:"24px",opacity:0.6}}>
-<h4 style={{fontFamily:"'Fraunces',serif",fontSize:"1.05rem",marginBottom:"6px",filter:"blur(1px)"}}>{u.city}</h4>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.68rem"}}>Fills in when we arrive</span>
+<p style={{fontSize:"0.85rem",opacity:0.85}}>{p.note}</p>
 </div>
 ))}
 </div>

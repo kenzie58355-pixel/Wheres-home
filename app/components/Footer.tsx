@@ -1,4 +1,5 @@
 ﻿import Link from "next/link";
+import { journey } from "../data/journey";
 
 export default function Footer() {
 return (
@@ -79,7 +80,7 @@ gap: "10px",
 }}
 >
 <span>© 2026 Where&apos;s Home? — Built with discipline.</span>
-<span>Currently: La Paz, Bolivia</span>
+<span>Currently: {journey.current.city}, {journey.current.country}</span>
 </div>
 </footer>
 );

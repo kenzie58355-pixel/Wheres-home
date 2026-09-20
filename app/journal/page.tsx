@@ -5,10 +5,11 @@ import { entries } from "./data";
 
 export default function Journal() {
 const now = new Date();
+const visible = entries.filter((e) => e.destination !== "la-paz");
 const isLive = (e: any) => !e.publishDate || new Date(e.publishDate) <= now;
 
-const live = entries.filter(isLive);
-const upcoming = entries.filter((e) => !isLive(e));
+const live = visible.filter(isLive);
+const upcoming = visible.filter((e) => !isLive(e));
 
 const featured = live.find((e) => e.featured) || live[0];
 const rest = live.filter((e) => e.slug !== featured?.slug);

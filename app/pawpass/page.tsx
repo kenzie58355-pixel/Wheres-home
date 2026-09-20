@@ -21,16 +21,18 @@ return (
 <div style={{maxWidth:"1200px",margin:"0 auto",padding:"20px 48px 0"}}>
 <CurrentJourney />
 </div>
-<section style={{background:"var(--terracotta)",color:"#F5EEDF",borderRadius:"20px",margin:"20px 24px 0",padding:"80px 48px",textAlign:"center"}}>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.75rem",opacity:0.85}}>Built Because I&apos;m Living This</span>
-<h1 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(2.2rem,5vw,3.4rem)",fontWeight:600,maxWidth:"700px",margin:"18px auto"}}>Planning shouldn&apos;t take hundreds of Google searches.</h1>
-<p style={{opacity:0.9,maxWidth:"560px",margin:"0 auto 28px"}}>Traveling with Ginger changed what I needed from a trip. PawPass is the tool I built to close that gap, tested in real time, in whatever city I&apos;m actually standing in.</p>
-<a href="/pawpass/explore" style={{display:"inline-block",background:"#F5EEDF",color:"var(--terracotta)",padding:"14px 28px",borderRadius:"100px",fontWeight:600,fontSize:"0.85rem",textDecoration:"none"}}>Explore Spots</a>
+<section style={{background:"linear-gradient(135deg,var(--terracotta),var(--stamp-red))",color:"#F5EEDF",borderRadius:"20px",margin:"20px 24px 0",padding:"100px 48px",textAlign:"center",position:"relative",overflow:"hidden"}}>
+<div style={{position:"absolute",top:"-60px",left:"-40px",fontSize:"11rem",opacity:0.1}}>🐾</div>
+<div style={{position:"absolute",bottom:"-60px",right:"-40px",fontSize:"11rem",opacity:0.1}}>🐾</div>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.8rem",opacity:0.9,letterSpacing:"0.1em",position:"relative"}}>NOBODY ELSE IS BUILDING THIS</span>
+<h1 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(2.6rem,6vw,4.2rem)",fontWeight:600,maxWidth:"780px",margin:"22px auto",position:"relative",lineHeight:1.05}}>Every dog-travel app out there was built by someone who stayed home.</h1>
+<p style={{opacity:0.95,maxWidth:"600px",margin:"0 auto 32px",fontSize:"1.05rem",position:"relative"}}>This one wasn&apos;t. Every pin, every rating, every gym listing on PawPass got tested by an actual dog, in an actual foreign country, by someone who actually needed it to exist first.</p>
+<a href="/pawpass/explore" style={{display:"inline-block",background:"#F5EEDF",color:"var(--stamp-red)",padding:"16px 34px",borderRadius:"100px",fontWeight:700,fontSize:"0.95rem",textDecoration:"none",position:"relative"}}>See It In Action →</a>
 </section>
 
 {currentDest && (
 <section style={{maxWidth:"1200px",margin:"0 auto",padding:"70px 48px 20px"}}>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.08em",color:"var(--terracotta)",display:"block",marginBottom:"10px"}}>See It in Action</span>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.08em",color:"var(--terracotta)",display:"block",marginBottom:"10px"}}>Proof, Not Promises</span>
 <h2 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.8rem,3.4vw,2.6rem)",fontWeight:600,marginBottom:"24px"}}>Right now, {currentDest.flag} {currentDest.city}.</h2>
 <Link href={"/destinations/" + currentDest.slug} style={{textDecoration:"none",color:"inherit"}}>
 <div style={{background:"var(--paper-2)",borderRadius:"16px",padding:"28px",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"16px"}}>

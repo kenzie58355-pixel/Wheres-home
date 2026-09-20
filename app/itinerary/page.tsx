@@ -4,14 +4,14 @@ import CurrentJourney from "../components/CurrentJourney";
 import { journey } from "../data/journey";
 
 const days = [
-{ label: "Days 1 to 3", title: "Acclimate and Wander", desc: "Slow mornings while altitude settles in. Afternoon walks with Ginger through Mallasilla, finding a local cafe with outdoor seating nearby.", tags: "Dog Friendly, Cafe Nearby" },
-{ label: "Days 4 to 30", title: "Train and Explore", desc: "Regular sessions at Altitud MMA and BJJ in Los Pinos. Weekends exploring nearby parks and green spaces along the valley, wherever Ginger wants to sniff next.", tags: "Combat Sports, Local Parks" },
-{ label: "Final Week", title: "Wind Down and Pack", desc: "Last training sessions, favorite neighborhood spots one more time, and prep for the next move.", tags: "Familiar Spots, Packing" },
+{ label: "Days 1 to 3", title: "Acclimate and Wander", desc: "Slow mornings settling into Cali, walks with Ginger, finding the neighborhood's rhythm after a long, chaotic travel day.", tags: "Dog Friendly, Cafe Nearby" },
+{ label: "Weeks 1 to 4", title: "Teaching and Exploring", desc: "Trips out to places like Chinchina for teaching, day hikes when they come up last minute, and figuring out Cali one neighborhood at a time.", tags: "Culture, Field Trips" },
+{ label: "Final Weeks", title: "Wind Down and Pack", desc: "Last favorite spots, wrapping up, and prepping for the next move on the route.", tags: "Familiar Spots, Packing" },
 ];
 
 export default function Itinerary() {
 const arrived = new Date(journey.current.arrived).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-const departs = new Date(journey.current.departs).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+const departs = journey.current.departs ? new Date(journey.current.departs).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "TBD";
 
 return (
 <main>
@@ -35,8 +35,8 @@ return (
 <strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem"}}>{arrived}, to {departs}</strong>
 </div>
 <div>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.7,display:"block",marginBottom:"6px"}}>Training At</span>
-<strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem"}}>Altitud MMA and BJJ</strong>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.7,display:"block",marginBottom:"6px"}}>Status</span>
+<strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem"}}>Settled In</strong>
 </div>
 </div>
 </section>

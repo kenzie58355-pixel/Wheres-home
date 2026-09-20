@@ -3,10 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { journey } from "../data/journey";
+import GlobeErrorBoundary from "./GlobeErrorBoundary";
 
 const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
 
-export default function JourneyGlobe() {
+function GlobeInner() {
 const globeEl = useRef<any>(null);
 const wrapperRef = useRef<HTMLDivElement>(null);
 const [size, setSize] = useState({ width: 600, height: 500 });
@@ -34,10 +35,12 @@ globeEl.current.controls().autoRotateSpeed = 0.4;
 }
 }, []);
 
-const colorFor = (status: string) => {
-if (status === "current") return "#1E4A47";
-if (status === "visited") return "#9C2A2E";
-if (status === "upcoming") return "#E8A25D";
+const colorFor = (d: any) => {
+if (d.code === "CO") return "#FFD700";
+if (d.status === "current") return "#1E4A47";
+if (d.status === "visited") return "#9C2A2E";
+if (d.status === "upcoming") return "#E8A25D";
+if (d.status === "attempted") return "#999999";
 return "#999";
 };
 
@@ -54,7 +57,7 @@ backgroundColor="rgba(0,0,0,0)"
 pointsData={journey.route}
 pointLat="lat"
 pointLng="lng"
-pointColor={(d: any) => colorFor(d.status)}
+pointColor={(d: any) => colorFor(d)}
 pointRadius={(d: any) => radiusFor(d.status)}
 pointAltitude={0.02}
 pointLabel={(d: any) => `${d.flag} ${d.country}`}
@@ -91,7 +94,7 @@ display: "block",
 marginBottom: "8px",
 }}
 >
-{selected.status === "current" ? "Currently here" : selected.status === "visited" ? "Visited" : "On the route"}
+{selected.status === "current" ? "Currently here" : selected.status === "visited" ? "Visited" : selected.status === "attempted" ? "Attempted, plan changed" : "On the route"}
 </span>
 <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.3rem", marginBottom: "10px" }}>
 {selected.flag} {selected.country}
@@ -110,7 +113,7 @@ textDecoration: "none",
 fontWeight: 600,
 }}
 >
-Explore {selected.country} →
+{selected.status === "attempted" ? "Read what happened →" : "Explore " + selected.country + " →"}
 </Link>
 ) : (
 <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.72rem", opacity: 0.6 }}>No guide here yet.</span>
@@ -118,5 +121,13 @@ Explore {selected.country} →
 </div>
 )}
 </div>
+);
+}
+
+export default function JourneyGlobe() {
+return (
+<GlobeErrorBoundary>
+<GlobeInner />
+</GlobeErrorBoundary>
 );
 }
