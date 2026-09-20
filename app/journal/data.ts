@@ -1,4 +1,22 @@
-﻿export const entries = [
+﻿export type JournalEntry = {
+slug: string;
+postmark: string;
+dateline: string;
+date: string;
+category: string;
+title: string;
+excerpt: string;
+readTime: string;
+location: string | null;
+gym: string | null;
+elevation: string | null;
+featured: boolean;
+destination?: string;
+publishDate?: string;
+body: { type: string; letter?: string; text: string }[];
+};
+
+export const entries: JournalEntry[] = [
 {
 slug: "bolivia-visa-fight-and-the-pivot",
 postmark: "PLAN B",
@@ -11,7 +29,7 @@ readTime: "7 min read",
 location: "Dallas, Texas",
 gym: null,
 elevation: null,
-featured: true,
+featured: false,
 destination: "la-paz",
 body: [
 { type: "drop", letter: "T", text: "he plan, for months, was Bolivia. La Paz specifically, altitude training, the whole thing already half written in my head before I ever landed anywhere. I had the gym picked out. I had a rough shape for the journal entries I was going to write about my lungs failing me on day one. I was that far into imagining it." },
@@ -80,7 +98,7 @@ readTime: "6 min read",
 location: "Villamaria, Colombia",
 gym: null,
 elevation: null,
-featured: false,
+featured: true,
 destination: "cali",
 body: [
 { type: "drop", letter: "T", text: "he original plan was a route called La Reina, and it fell through entirely, one of those trip cancellations with no real explanation attached, just a message saying it was not happening. In its place, a group chat lit up with a last-minute offer instead, an announcement in Spanish that read almost like a dare, nature, water, history, and views, at the tunnels of Villamaria, leaving from Chinchina at 8am, back by 4pm, only five spots available, and a line at the end that stuck with me, something like do not stay home while everyone else is living the adventure." },
