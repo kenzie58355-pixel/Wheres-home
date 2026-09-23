@@ -5,33 +5,34 @@ import Footer from "../../components/Footer";
 import JourneyGlobe from "../../components/JourneyGlobe";
 import { journey } from "../../data/journey";
 
-const cityData: Record<string, { flag: string; spots: { name: string; badge: string; note: string }[] }> = {
+const cityData: Record<string, { flag: string; spots: { name: string; badge: string; note: string; mapQuery: string }[] }> = {
 Cali: {
 flag: "🇨🇴",
 spots: [
-{ name: "Parque de los Perros", badge: "Dog Park", note: "A proper off-leash dog park, open enough to spend a full afternoon at." },
-{ name: "A few smaller parks around Cali", badge: "Parks", note: "Scattered around the city, good for quick walks between everything else." },
-{ name: "Dog Camp Cali", badge: "Field Trip", note: "A dedicated dog camp, worth a full visit on its own." },
-{ name: "Jardin Plaza and the surrounding area", badge: "Shopping", note: "A real mall with dog-friendly outdoor areas nearby, easy to combine with a walk." },
-{ name: "Peluqueria Canina Mundo Peludo", badge: "Grooming", note: "Cra. 38c #1-54, Nueva Granada. A genuinely great groom, full write-up in the journal." },
-{ name: "The tunnels of Villamaria", badge: "Hike", note: "A last-minute hike that ended at a waterfall Ginger swam in. One of the best afternoons of the trip." },
+{ name: "Parque del Perro", badge: "Dog Park", note: "A lively plaza in San Fernando, named for a dog statue, cafes and bars ring the whole square.", mapQuery: "Parque del Perro, San Fernando, Cali, Colombia" },
+{ name: "A few smaller parks around Cali", badge: "Parks", note: "Scattered around the city, good for quick walks between everything else.", mapQuery: "Cali, Colombia" },
+{ name: "Dog Camp Cali", badge: "Field Trip", note: "A dedicated dog camp, worth a full visit on its own.", mapQuery: "Cali, Colombia" },
+{ name: "Jardin Plaza and the surrounding area", badge: "Shopping", note: "A major mall in Ciudad Jardin with dog-friendly outdoor areas nearby, easy to combine with a walk.", mapQuery: "Jardin Plaza, Cali, Colombia" },
+{ name: "Peluqueria Canina Mundo Peludo", badge: "Grooming", note: "Cra. 38c #1-54, Nueva Granada. A genuinely great groom, full write-up in the journal.", mapQuery: "Peluqueria Canina Mundo Peludo, Cra. 38c #1-54, Cali, Colombia" },
+{ name: "The tunnels of Villamaria", badge: "Hike", note: "A last-minute hike that ended at a waterfall Ginger swam in. One of the best afternoons of the trip.", mapQuery: "Tunel de Villamaria, Caldas, Colombia" },
 ],
 },
 Dallas: {
 flag: "🇺🇸",
 spots: [
-{ name: "White Rock Lake Dog Park", badge: "Paw 4.6", note: "Separate areas for large and small dogs, plus direct lake access." },
-{ name: "NorthBark Dog Park", badge: "Paw 4.5", note: "A 22-acre facility with separate enclosures and a fenced water pond." },
-{ name: "Bark Park Central", badge: "Paw 3.9", note: "A 1.2-acre off-leash park decorated with vibrant street murals." },
-{ name: "Dallas Farmers Market", badge: "Paw 4.5", note: "Leashed dogs welcome in the open-air pavilion and outdoor patios." },
-{ name: "The Upper Paw", badge: "Paw 4.8", note: "A boutique with premium pet foods, toys, apparel, and bakery treats." },
-{ name: "Uptown Pup Self-Wash", badge: "Paw 4.9", note: "DIY dog-washing stations fully stocked with professional supplies." },
+{ name: "White Rock Lake Dog Park", badge: "Paw 4.6", note: "Separate areas for large and small dogs, plus direct lake access.", mapQuery: "White Rock Lake Dog Park, 8000 E Mockingbird Ln, Dallas, TX" },
+{ name: "NorthBark Dog Park", badge: "Paw 4.5", note: "A 22-acre facility with separate enclosures and a fenced water pond.", mapQuery: "NorthBark Dog Park, 4899 Gramercy Oaks Dr, Dallas, TX" },
+{ name: "Bark Park Central", badge: "Paw 3.9", note: "A 1.2-acre off-leash park decorated with vibrant street murals.", mapQuery: "Bark Park Central, 2530 Commerce St, Dallas, TX" },
+{ name: "Dallas Farmers Market", badge: "Paw 4.5", note: "Leashed dogs welcome in the open-air pavilion and outdoor patios.", mapQuery: "Dallas Farmers Market, 920 S Harwood St, Dallas, TX" },
+{ name: "The Upper Paw", badge: "Paw 4.8", note: "A boutique with premium pet foods, toys, apparel, and bakery treats.", mapQuery: "2809 Commerce St, Dallas, TX" },
+{ name: "Uptown Pup Self-Wash", badge: "Paw 4.9", note: "DIY dog-washing stations fully stocked with professional supplies.", mapQuery: "2905 Thomas Ave, Dallas, TX" },
 ],
 },
 };
 
 export default function Explore() {
 const [activeCity, setActiveCity] = useState("Cali");
+const [openMap, setOpenMap] = useState<string | null>(null);
 const visitedCount = journey.route.filter((r) => r.status === "visited").length;
 const currentCount = journey.route.filter((r) => r.status === "current").length;
 const upcomingCount = journey.route.filter((r) => r.status === "upcoming").length;
@@ -63,7 +64,7 @@ return (
 {cities.map((city) => (
 <button
 key={city}
-onClick={() => setActiveCity(city)}
+onClick={() => { setActiveCity(city); setOpenMap(null); }}
 style={{
 fontFamily: "'Space Mono', monospace",
 fontSize: "0.8rem",
@@ -81,15 +82,38 @@ fontWeight: 600,
 ))}
 </div>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:"18px"}}>
-{cityData[activeCity].spots.map((p, i) => (
+{cityData[activeCity].spots.map((p, i) => {
+const key = activeCity + "-" + i;
+const isOpen = openMap === key;
+return (
 <div key={i} style={{background:"var(--paper-2)",borderRadius:"14px",padding:"22px"}}>
 <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:"8px"}}>
 <h4 style={{fontFamily:"'Fraunces',serif",fontSize:"1.05rem",maxWidth:"70%"}}>{p.name}</h4>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",background:"var(--paper)",padding:"3px 10px",borderRadius:"100px",whiteSpace:"nowrap"}}>{p.badge}</span>
 </div>
-<p style={{fontSize:"0.85rem",opacity:0.85}}>{p.note}</p>
+<p style={{fontSize:"0.85rem",opacity:0.85,marginBottom:"14px"}}>{p.note}</p>
+<button
+onClick={() => setOpenMap(isOpen ? null : key)}
+style={{background:"none",border:"none",padding:0,cursor:"pointer",fontFamily:"'Space Mono',monospace",fontSize:"0.72rem",color:"var(--terracotta)",fontWeight:600}}
+>
+{isOpen ? "Hide map ▴" : "View on map ▾"}
+</button>
+{isOpen && (
+<div style={{marginTop:"14px",borderRadius:"10px",overflow:"hidden",height:"220px"}}>
+<iframe
+src={`https://www.google.com/maps?q=${encodeURIComponent(p.mapQuery)}&output=embed`}
+width="100%"
+height="100%"
+style={{border:0}}
+loading="lazy"
+referrerPolicy="no-referrer-when-downgrade"
+title={p.name}
+></iframe>
 </div>
-))}
+)}
+</div>
+);
+})}
 </div>
 </section>
 <Footer />
