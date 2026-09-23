@@ -1,5 +1,6 @@
 ﻿import Link from "next/link";
 import { journey } from "../data/journey";
+import BeaconsEmailForm from "./BeaconsEmailForm";
 
 export default function Footer() {
 return (
@@ -17,7 +18,7 @@ marginBottom: "60px",
 <div style={{maxWidth:"340px"}}>
 <h4 style={{fontFamily:"'Fraunces',serif",fontSize:"1.3rem",marginBottom:"10px"}}>Join the journey.</h4>
 <p style={{fontSize:"0.85rem",opacity:0.7,marginBottom:"18px"}}>Thousands of adventurous travelers exploring the world with their dogs.</p>
-<a href="https://beacons.ai/mmaathome" target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"var(--apricot)",color:"var(--ink)",padding:"12px 24px",borderRadius:"100px",fontWeight:600,fontSize:"0.85rem",textDecoration:"none"}}>Subscribe on Beacons</a>
+<BeaconsEmailForm />
 </div>
 
 <div
