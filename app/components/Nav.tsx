@@ -36,7 +36,7 @@ Vlog {openMenu === "vlog" ? "▴" : "▾"}
 <div>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.6,textTransform:"uppercase",letterSpacing:"0.06em",display:"block",marginBottom:"14px"}}>Browse</span>
 <Link href="/destinations" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.95rem",fontWeight:600,marginBottom:"10px"}}>All Destinations</Link>
-<Link href="/destinations/la-paz" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8}}>La Paz, Bolivia</Link>
+<Link href="/destinations/cali" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8}}>Cali, Colombia</Link>
 </div>
 <div>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.6,textTransform:"uppercase",letterSpacing:"0.06em",display:"block",marginBottom:"14px"}}>By Interest</span>
@@ -53,14 +53,13 @@ Vlog {openMenu === "vlog" ? "▴" : "▾"}
 <div>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.6,textTransform:"uppercase",letterSpacing:"0.06em",display:"block",marginBottom:"14px"}}>Browse</span>
 <Link href="/journal" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.95rem",fontWeight:600,marginBottom:"10px"}}>All Entries</Link>
-<Link href="/journal?category=la-paz" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8,marginBottom:"8px"}}>La Paz</Link>
-<Link href="/journal?category=training" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8,marginBottom:"8px"}}>Training</Link>
+<Link href="/journal?category=cali" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8,marginBottom:"8px"}}>Cali</Link>
 <Link href="/journal?category=ginger" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8}}>Ginger</Link>
 </div>
 <div>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.6,textTransform:"uppercase",letterSpacing:"0.06em",display:"block",marginBottom:"14px"}}>Latest</span>
-<span style={{display:"block",fontSize:"0.9rem",marginBottom:"6px"}}>Why I stopped waiting for the right time</span>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.6}}>April 3, 2026</span>
+<span style={{display:"block",fontSize:"0.9rem",marginBottom:"6px"}}>The hike that almost did not happen</span>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.6}}>Aug 30, 2026</span>
 </div>
 </div>
 </div>
@@ -76,8 +75,8 @@ Vlog {openMenu === "vlog" ? "▴" : "▾"}
 </div>
 <div>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.6,textTransform:"uppercase",letterSpacing:"0.06em",display:"block",marginBottom:"14px"}}>Latest</span>
-<span style={{display:"block",fontSize:"0.9rem",marginBottom:"6px"}}>First sparring session in La Paz</span>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.6}}>Drops Aug 28, 2026</span>
+<span style={{display:"block",fontSize:"0.9rem",marginBottom:"6px"}}>First sparring session in Cali, Colombia</span>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.6}}>Drops Sept 5, 2026</span>
 </div>
 </div>
 </div>

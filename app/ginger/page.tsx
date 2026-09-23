@@ -2,7 +2,7 @@
 import Footer from "../components/Footer";
 
 const gingerFacts = [
-{ label: "Favorite Country", value: "Bolivia (so far)" },
+{ label: "Favorite Country", value: "Cali (so far)" },
 { label: "Favorite Snack", value: "Anything off your plate" },
 { label: "Favorite Hike", value: "Parque Urbano Central" },
 { label: "Favorite Toy", value: "The one you're holding" },

@@ -4,6 +4,32 @@ import Link from "next/link";
 import { episodes } from "../data";
 import { destinations } from "../../data/destinations";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+function getYouTubeId(url: string) {
+if (!url) return null;
+const patterns = [/youtu\.be\/([^?&]+)/, /v=([^?&]+)/, /embed\/([^?&]+)/];
+for (const p of patterns) {
+const m = url.match(p);
+if (m) return m[1];
+}
+if (/^[A-Za-z0-9_-]{6,}$/.test(url)) return url;
+return null;
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+const { slug } = await params;
+const ep = episodes.find((e) => e.slug === slug);
+if (!ep) return {};
+return {
+title: ep.title + " | Where's Home?",
+description: ep.desc,
+openGraph: {
+title: ep.title,
+description: ep.desc,
+},
+};
+}
 
 export default async function Episode({ params }: { params: Promise<{ slug: string }> }) {
 const { slug } = await params;
@@ -15,6 +41,7 @@ const drop = new Date(ep.dropDate);
 const daysLeft = Math.ceil((drop.getTime() - now.getTime()) / 86400000);
 const isLive = daysLeft <= 0;
 const dropLabel = drop.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+const youtubeId = ep.videoUrl ? getYouTubeId(ep.videoUrl) : null;
 
 const related = episodes.filter((e) => e.slug !== ep.slug).slice(0, 3);
 const dest = ep.destination ? destinations.find((d) => d.slug === ep.destination) : null;
@@ -36,11 +63,28 @@ return (
 </div>
 </section>
 
+{youtubeId ? (
+<section style={{maxWidth:"800px",margin:"0 auto 50px",padding:"0 24px"}}>
+<div style={{position:"relative",paddingBottom:"56.25%",height:0,borderRadius:"18px",overflow:"hidden"}}>
+<iframe
+src={`https://www.youtube.com/embed/${youtubeId}`}
+title={ep.title}
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowFullScreen
+style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",border:"none"}}
+></iframe>
+</div>
+</section>
+) : (
 <section style={{height:"420px",borderRadius:"18px",margin:"0 24px 50px",background:ep.thumb,display:"flex",alignItems:"center",justifyContent:"center"}}>
 {!isLive && (
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.85rem",color:"var(--cream-text)",textTransform:"uppercase",letterSpacing:"0.08em",opacity:0.9}}>Video drops {dropLabel}</span>
 )}
+{isLive && (
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.8rem",color:"var(--cream-text)",opacity:0.8}}>Video coming soon</span>
+)}
 </section>
+)}
 
 <section style={{maxWidth:"700px",margin:"0 auto",padding:"0 48px 30px"}}>
 <p style={{fontSize:"1.05rem",lineHeight:1.75,opacity:isLive?1:0.7}}>{ep.desc}</p>

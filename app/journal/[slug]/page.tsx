@@ -4,6 +4,21 @@ import Link from "next/link";
 import { entries } from "../data";
 import { destinations } from "../../data/destinations";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+const { slug } = await params;
+const entry = entries.find((e) => e.slug === slug);
+if (!entry) return {};
+return {
+title: entry.title + " | Where's Home?",
+description: entry.excerpt,
+openGraph: {
+title: entry.title,
+description: entry.excerpt,
+},
+};
+}
 
 export default async function JournalEntry({ params }: { params: Promise<{ slug: string }> }) {
 const { slug } = await params;
