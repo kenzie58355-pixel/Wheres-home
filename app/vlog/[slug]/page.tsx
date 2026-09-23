@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 
 function getYouTubeId(url: string) {
 if (!url) return null;
-const patterns = [/youtu\.be\/([^?&]+)/, /v=([^?&]+)/, /embed\/([^?&]+)/];
+const patterns = [/shorts\/([^?&]+)/, /youtu\.be\/([^?&]+)/, /v=([^?&]+)/, /embed\/([^?&]+)/];
 for (const p of patterns) {
 const m = url.match(p);
 if (m) return m[1];
@@ -42,6 +42,7 @@ const daysLeft = Math.ceil((drop.getTime() - now.getTime()) / 86400000);
 const isLive = daysLeft <= 0;
 const dropLabel = drop.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 const youtubeId = ep.videoUrl ? getYouTubeId(ep.videoUrl) : null;
+const isShort = ep.videoUrl ? ep.videoUrl.includes("shorts") : false;
 
 const related = episodes.filter((e) => e.slug !== ep.slug).slice(0, 3);
 const dest = ep.destination ? destinations.find((d) => d.slug === ep.destination) : null;
@@ -64,6 +65,19 @@ return (
 </section>
 
 {youtubeId ? (
+isShort ? (
+<section style={{maxWidth:"380px",margin:"0 auto 50px",padding:"0 24px"}}>
+<div style={{position:"relative",paddingBottom:"177.78%",height:0,borderRadius:"18px",overflow:"hidden"}}>
+<iframe
+src={`https://www.youtube.com/embed/${youtubeId}`}
+title={ep.title}
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowFullScreen
+style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",border:"none"}}
+></iframe>
+</div>
+</section>
+) : (
 <section style={{maxWidth:"800px",margin:"0 auto 50px",padding:"0 24px"}}>
 <div style={{position:"relative",paddingBottom:"56.25%",height:0,borderRadius:"18px",overflow:"hidden"}}>
 <iframe
@@ -75,6 +89,7 @@ style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",border:"none
 ></iframe>
 </div>
 </section>
+)
 ) : (
 <section style={{height:"420px",borderRadius:"18px",margin:"0 24px 50px",background:ep.thumb,display:"flex",alignItems:"center",justifyContent:"center"}}>
 {!isLive && (
