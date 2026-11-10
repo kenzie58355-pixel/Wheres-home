@@ -23,7 +23,7 @@ return (
 
 <Reveal>
 <FeatureBlock
-tag="PawPass · 01 — Explore"
+tag="PawPass · 01 · Explore"
 title="Find every dog-friendly corner of a new city."
 description="A living map of parks, cafes, and trails, rated by real dogs, not algorithms. Built from the ground we actually walked."
 ctaText="See the map"
@@ -38,7 +38,7 @@ imageSrc="/explore-photo.jpg"
 
 <Reveal>
 <FeatureBlock
-tag="PawPass · 02 — Adventure Log"
+tag="PawPass · 02 · Adventure Log"
 title="Every trip, stamped and saved."
 description="Log every border, every trail, every first, and watch your dog's own passport fill up as you go."
 ctaText="See how it works"
@@ -54,7 +54,7 @@ imageSrc="/log-photo.jpg"
 
 <Reveal>
 <FeatureBlock
-tag="PawPass · 03 — Ginger Approved"
+tag="PawPass · 03 · Ginger Approved"
 title="If Ginger wouldn't go back, we don't list it."
 description="A curation layer built on one strict standard: would a well-traveled dog actually want to be here."
 ctaText="Browse spots"

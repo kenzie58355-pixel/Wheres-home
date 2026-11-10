@@ -3,7 +3,7 @@ import { entries } from "../journal/data";
 
 export default function Journal() {
 const now = new Date();
-const visible = entries.filter((e) => !e.publishDate || new Date(e.publishDate) <= now);
+const visible = entries.filter((e) => e.destination !== "la-paz" && (!e.publishDate || new Date(e.publishDate) <= now));
 const featured = visible.find((e) => e.featured) || visible[0];
 const rest = visible.filter((e) => e.slug !== featured?.slug).slice(0, 2);
 

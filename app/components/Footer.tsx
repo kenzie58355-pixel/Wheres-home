@@ -80,7 +80,7 @@ flexWrap: "wrap",
 gap: "10px",
 }}
 >
-<span>© 2026 Where&apos;s Home? — Built with discipline.</span>
+<span>© 2026 Where&apos;s Home? · Built with discipline.</span>
 <span>Currently: {journey.current.city}, {journey.current.country}</span>
 </div>
 </footer>

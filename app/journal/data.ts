@@ -69,6 +69,7 @@ body: [
 },
 {
 slug: "chinchina-teaching-trip",
+image: "/Mack-Kid-Ginger.jpeg",
 postmark: "CHINCHINA",
 dateline: "Chinchina, Colombia",
 date: "Aug 29, 2026",
@@ -114,6 +115,7 @@ body: [
 },
 {
 slug: "navigating-gingers-heat-abroad",
+image: "/IMG_4439.jpeg",
 postmark: "GINGER LOG",
 dateline: "Cali, Colombia",
 date: "Sept 2, 2026",

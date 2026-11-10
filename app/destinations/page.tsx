@@ -21,7 +21,7 @@ return (
 <div style={{background:"var(--paper-2)",borderRadius:"16px",overflow:"hidden",cursor:"pointer"}}>
 <div style={{height:"190px",background:d.heroGradient,position:"relative"}}>
 <span style={{position:"absolute",top:"14px",right:"14px",background:"rgba(247,242,231,0.9)",padding:"5px 12px",borderRadius:"100px",fontSize:"0.68rem",fontFamily:"'Space Mono',monospace"}}>
-{d.dogFriendliness === "TBD" ? "Coming Soon" : "Paw " + d.dogFriendliness}
+{d.dogFriendliness === "TBD" ? "Guide in progress" : "Paw " + d.dogFriendliness}
 </span>
 </div>
 <div style={{padding:"20px"}}>

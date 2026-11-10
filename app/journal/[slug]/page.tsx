@@ -44,8 +44,8 @@ return (
 </section>
 
 {entry.image ? (
-<section style={{height:"420px",borderRadius:"18px",margin:"0 24px 50px",overflow:"hidden",position:"relative"}}>
-<img src={entry.image} alt={entry.title} style={{width:"100%",height:"100%",objectFit:"cover"}} />
+<section style={{maxWidth:"760px",margin:"0 auto 50px",padding:"0 24px",textAlign:"center"}}>
+<img src={entry.image} alt={entry.title} style={{display:"inline-block",maxWidth:"100%",maxHeight:"640px",width:"auto",height:"auto",borderRadius:"18px"}} />
 </section>
 ) : (
 <section style={{height:"320px",borderRadius:"18px",margin:"0 24px 50px",background:"linear-gradient(160deg,#8a6a4a,#4a3a2a)"}}></section>

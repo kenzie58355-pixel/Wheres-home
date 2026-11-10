@@ -134,9 +134,9 @@ You don&apos;t need the perfect environment to become who you want to be.
 <p style={{opacity:0.75,marginBottom:"4px"}}>I packed my things. Packed Ginger&apos;s things. Got on a plane. And started.</p>
 </section>
 <section style={{maxWidth:"700px",margin:"0 auto",padding:"0 48px 90px",textAlign:"center"}}>
-<p style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.5rem,3vw,2rem)",fontWeight:600,marginBottom:"10px"}}>Now we&apos;re in Colombia.</p>
-<p style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem",opacity:0.8,marginBottom:"6px"}}>Next comes Ecuador.</p>
-<p style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem",opacity:0.8,marginBottom:"30px"}}>Then more of South America. Then more of the world.</p>
+<p style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.5rem,3vw,2rem)",fontWeight:600,marginBottom:"10px"}}>Colombia became home base.</p>
+<p style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem",opacity:0.8,marginBottom:"6px"}}>Ecuador came next, a month on the coast in Manta.</p>
+<p style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem",opacity:0.8,marginBottom:"30px"}}>Then Peru, Bolivia, and Chile. Then more of the world.</p>
 <p style={{opacity:0.8,marginBottom:"10px"}}>The goal?</p>
 <p style={{fontSize:"1.05rem",fontWeight:600}}>See how much of this planet we can experience while building a life we actually love.</p>
 </section>
