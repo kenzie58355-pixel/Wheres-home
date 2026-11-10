@@ -43,7 +43,13 @@ return (
 </div>
 </section>
 
+{entry.image ? (
+<section style={{height:"420px",borderRadius:"18px",margin:"0 24px 50px",overflow:"hidden",position:"relative"}}>
+<img src={entry.image} alt={entry.title} style={{width:"100%",height:"100%",objectFit:"cover"}} />
+</section>
+) : (
 <section style={{height:"320px",borderRadius:"18px",margin:"0 24px 50px",background:"linear-gradient(160deg,#8a6a4a,#4a3a2a)"}}></section>
+)}
 
 <section style={{maxWidth:"680px",margin:"0 auto",padding:"0 48px 30px",fontSize:"1.05rem",lineHeight:1.75}}>
 {entry.body.map((block, i) => {
@@ -108,3 +114,4 @@ return <p key={i} style={{marginBottom:"22px"}}>{block.text}</p>;
 </main>
 );
 }
+

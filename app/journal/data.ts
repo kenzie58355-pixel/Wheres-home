@@ -12,6 +12,7 @@ gym: string | null;
 elevation: string | null;
 featured: boolean;
 destination?: string;
+image?: string;
 publishDate?: string;
 body: { type: string; letter?: string; text: string }[];
 };
@@ -43,6 +44,7 @@ body: [
 },
 {
 slug: "flying-to-cali-with-ginger",
+image: "/Airline-Ginger.jpeg",
 postmark: "GINGER LOG",
 dateline: "Arrival in Cali",
 date: "Aug 27, 2026",
@@ -88,6 +90,7 @@ body: [
 },
 {
 slug: "villamaria-tunnels-and-the-waterfall",
+image: "/Hike-Ginger.jpeg",
 postmark: "FIELD TRIP",
 dateline: "Villamaria, Colombia",
 date: "Aug 30, 2026",
@@ -134,6 +137,7 @@ body: [
 },
 {
 slug: "mundo-peludo-grooming-cali",
+image: "/Groom-Ginger.jpeg",
 postmark: "GINGER APPROVED",
 dateline: "Cali, Colombia",
 date: "Sept 5, 2026",
