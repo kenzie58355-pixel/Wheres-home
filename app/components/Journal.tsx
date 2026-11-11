@@ -4,6 +4,8 @@ import { entries } from "../journal/data";
 export default function Journal() {
 const now = new Date();
 const visible = entries.filter((e) => e.destination !== "la-paz" && (!e.publishDate || new Date(e.publishDate) <= now));
+const when = (d: string) => Date.parse(d.replace("Sept", "Sep")) || 0;
+visible.sort((a, b) => when(b.date) - when(a.date));
 const featured = visible.find((e) => e.featured) || visible[0];
 const rest = visible.filter((e) => e.slug !== featured?.slug).slice(0, 2);
 

@@ -29,7 +29,7 @@ return (
 </section>
 
 <section style={{maxWidth:"1200px",margin:"0 auto",padding:"40px 48px 90px"}}>
-<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(360px,1fr))",gap:"50px"}}>
+<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(360px,100%),1fr))",gap:"50px"}}>
 
 <div>
 <div style={{height:"420px",borderRadius:"20px",overflow:"hidden",marginBottom:"24px",background:"linear-gradient(150deg,#e8c39a,#b5522e)"}}>

@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export default function CurrentJourney() {
-const arrived = new Date(journey.current.arrived).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+const arrived = new Date(journey.current.arrived + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" });
 
 return (
 <div style={{

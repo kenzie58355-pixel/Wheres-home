@@ -4,7 +4,7 @@ export default function RoadAhead() {
 return (
 <div style={{maxWidth:"1200px",margin:"0 auto",padding:"16px 48px 0",display:"flex",alignItems:"center",gap:"18px",flexWrap:"wrap"}}>
 <span style={{fontFamily:"'Fraunces',serif",fontStyle:"italic",fontSize:"0.95rem",opacity:0.75,whiteSpace:"nowrap"}}>The route isn&apos;t fixed.</span>
-<div style={{display:"flex",alignItems:"center"}}>
+<div style={{display:"flex",alignItems:"center",flexWrap:"wrap",rowGap:"8px"}}>
 {journey.route.map((stop, i) => (
 <div key={i} style={{display:"flex",alignItems:"center"}}>
 <div style={{

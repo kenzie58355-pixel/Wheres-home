@@ -29,6 +29,7 @@ imageSrc,
 }: FeatureBlockProps) {
 return (
 <section
+className="feature-block"
 style={{
 padding: "100px 32px",
 display: "grid",

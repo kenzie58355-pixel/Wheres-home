@@ -40,7 +40,7 @@ const ep = episodes.find((e) => e.slug === slug);
 if (!ep) return notFound();
 
 const now = new Date();
-const drop = new Date(ep.dropDate);
+const drop = new Date(ep.dropDate + "T00:00:00-05:00");
 const daysLeft = Math.ceil((drop.getTime() - now.getTime()) / 86400000);
 const isLive = daysLeft <= 0;
 const dropLabel = drop.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });

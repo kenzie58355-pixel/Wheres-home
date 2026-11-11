@@ -2,10 +2,11 @@
 import { journey } from "../data/journey";
 
 export default function Hero() {
-const arrived = new Date(journey.current.arrived).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+const arrived = new Date(journey.current.arrived + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" });
 
 return (
 <section
+className="hero"
 style={{
 minHeight: "100svh",
 display: "flex",

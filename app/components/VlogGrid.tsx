@@ -49,7 +49,7 @@ gap: "28px",
 }}
 >
 {episodes.map((ep, i) => {
-const drop = new Date(ep.dropDate);
+const drop = new Date(ep.dropDate + "T00:00:00-05:00");
 const daysLeft = Math.ceil((drop.getTime() - now.getTime()) / 86400000);
 const isLive = daysLeft <= 0;
 const dropLabel = drop.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
@@ -68,7 +68,7 @@ cursor: "pointer",
 >
 <div
 style={{
-height: "200px",
+aspectRatio: "16 / 10",
 background: "linear-gradient(0deg, rgba(20,15,10,0.8), rgba(20,15,10,0) 60%), " + ep.thumb,
 display: "flex",
 flexDirection: "column",

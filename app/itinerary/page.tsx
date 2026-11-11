@@ -11,8 +11,8 @@ const days = [
 ];
 
 export default function Itinerary() {
-const arrived = new Date(journey.current.arrived).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-const departs = journey.current.departs ? new Date(journey.current.departs).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "open-ended";
+const arrived = new Date(journey.current.arrived + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+const departs = journey.current.departs ? new Date(journey.current.departs + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "open-ended";
 
 return (
 <main>

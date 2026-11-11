@@ -75,44 +75,7 @@ return (
 <p style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.6rem,3.2vw,2.2rem)",fontWeight:600,color:"var(--terracotta)"}}>Let&apos;s build it.</p>
 </section>
 
-<section style={{maxWidth:"1200px",margin:"70px auto 10px",padding:"0 48px",textAlign:"center"}}>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.75rem",textTransform:"uppercase",letterSpacing:"0.1em",color:"var(--terracotta)"}}>What We Do</span>
-<p style={{fontSize:"0.85rem",opacity:0.6,marginTop:"10px"}}>Tap the one that fits, we&apos;ll pre-fill it below.</p>
-</section>
-<section style={{maxWidth:"1200px",margin:"0 auto",padding:"20px 48px 90px"}}>
-<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:"20px"}}>
-{whatWeDo.map((w, i) => {
-const isSelected = selected === w.title;
-return (
-<button
-key={i}
-onClick={() => pickService(w.title)}
-style={{
-background: isSelected ? "var(--terracotta)" : "var(--paper-2)",
-color: isSelected ? "#F5EEDF" : "var(--ink)",
-borderRadius: "18px",
-padding: "32px",
-textAlign: "left",
-border: isSelected ? "2px solid var(--terracotta)" : "2px solid transparent",
-cursor: "pointer",
-transition: "transform 0.15s ease, background 0.2s ease",
-transform: isSelected ? "translateY(-4px)" : "none",
-boxShadow: isSelected ? "0 12px 24px rgba(181,82,46,0.25)" : "none",
-}}
->
-<span style={{fontSize:"2rem",display:"block",marginBottom:"16px"}}>{w.icon}</span>
-<h4 style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem",marginBottom:"10px"}}>{w.title}</h4>
-<p style={{fontSize:"0.88rem",opacity:isSelected?0.95:0.8,lineHeight:1.6,marginBottom:"14px"}}>{w.desc}</p>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.72rem",fontWeight:600}}>
-{isSelected ? "✓ Selected, scroll down →" : "Tap to inquire →"}
-</span>
-</button>
-);
-})}
-</div>
-</section>
-
-<section style={{maxWidth:"1200px",margin:"0 auto",padding:"0 48px 90px"}}>
+<section style={{maxWidth:"1200px",margin:"0 auto",padding:"60px 48px 40px"}}>
 <div style={{textAlign:"center",marginBottom:"40px"}}>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.75rem",textTransform:"uppercase",letterSpacing:"0.1em",color:"var(--terracotta)"}}>Packages and Pricing</span>
 <h2 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.8rem,3.6vw,2.6rem)",fontWeight:600,marginTop:"12px"}}>Clear prices. No surprise fees.</h2>
@@ -154,6 +117,43 @@ boxShadow: isSelected ? "0 12px 24px rgba(181,82,46,0.25)" : "none",
 </div>
 </div>
 <p style={{fontSize:"0.75rem",opacity:0.6,marginTop:"18px",lineHeight:1.6,maxWidth:"760px"}}>Pet relocation help is guidance based on real experience moving a dog between countries, not veterinary or legal advice. Entry rules change often, so always confirm requirements with the official authorities, your airline, and a registered vet before you travel.</p>
+</section>
+
+<section style={{maxWidth:"1200px",margin:"70px auto 10px",padding:"0 48px",textAlign:"center"}}>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.75rem",textTransform:"uppercase",letterSpacing:"0.1em",color:"var(--terracotta)"}}>What We Do</span>
+<p style={{fontSize:"0.85rem",opacity:0.6,marginTop:"10px"}}>Tap the one that fits, we&apos;ll pre-fill it below.</p>
+</section>
+<section style={{maxWidth:"1200px",margin:"0 auto",padding:"20px 48px 90px"}}>
+<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:"20px"}}>
+{whatWeDo.map((w, i) => {
+const isSelected = selected === w.title;
+return (
+<button
+key={i}
+onClick={() => pickService(w.title)}
+style={{
+background: isSelected ? "var(--terracotta)" : "var(--paper-2)",
+color: isSelected ? "#F5EEDF" : "var(--ink)",
+borderRadius: "18px",
+padding: "32px",
+textAlign: "left",
+border: isSelected ? "2px solid var(--terracotta)" : "2px solid transparent",
+cursor: "pointer",
+transition: "transform 0.15s ease, background 0.2s ease",
+transform: isSelected ? "translateY(-4px)" : "none",
+boxShadow: isSelected ? "0 12px 24px rgba(181,82,46,0.25)" : "none",
+}}
+>
+<span style={{fontSize:"2rem",display:"block",marginBottom:"16px"}}>{w.icon}</span>
+<h4 style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem",marginBottom:"10px"}}>{w.title}</h4>
+<p style={{fontSize:"0.88rem",opacity:isSelected?0.95:0.8,lineHeight:1.6,marginBottom:"14px"}}>{w.desc}</p>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.72rem",fontWeight:600}}>
+{isSelected ? "✓ Selected, scroll down →" : "Tap to inquire →"}
+</span>
+</button>
+);
+})}
+</div>
 </section>
 
 <section style={{background:"var(--teal)",color:"#F5EEDF",borderRadius:"20px",margin:"0 24px",padding:"90px 48px",textAlign:"center"}}>

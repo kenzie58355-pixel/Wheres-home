@@ -8,6 +8,7 @@ import { destinations } from "../../data/destinations";
 import { journey } from "../../data/journey";
 import { entries } from "../../journal/data";
 import { episodes } from "../../vlog/data";
+import { itineraries } from "../../data/itineraries";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -32,6 +33,7 @@ const isCurrent = journey.current.city.toLowerCase() === dest.city.toLowerCase()
 const now = new Date();
 const relatedEntries = entries.filter((e) => e.destination === slug && (!e.publishDate || new Date(e.publishDate) <= now));
 const relatedEpisodes = episodes.filter((ep) => ep.destination === slug);
+const sampleTrip = itineraries.find((it) => it.destination === slug);
 
 return (
 <main>
@@ -172,6 +174,12 @@ Groomed at <strong>{dest.ginger.groomingSpot.name}</strong>, {dest.ginger.groomi
 <section style={{maxWidth:"1200px",margin:"0 auto",padding:"70px 48px 90px"}}>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.08em",color:"var(--terracotta)",display:"block",marginBottom:"10px"}}>Plan the Trip</span>
 <h2 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.8rem,3.4vw,2.6rem)",fontWeight:600,marginBottom:"30px"}}>Already mapped out for you.</h2>
+{sampleTrip && (
+<div style={{background:"var(--paper-2)",borderRadius:"16px",padding:"36px",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"20px",marginBottom:"20px"}}>
+<div><span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem"}}>Sample itinerary, {sampleTrip.length}</span><h4 style={{fontFamily:"'Fraunces',serif",fontSize:"1.4rem",marginTop:"6px"}}>{sampleTrip.title}</h4></div>
+<Link href={"/itineraries/" + sampleTrip.slug} style={{background:"var(--ink)",color:"var(--paper)",padding:"14px 26px",borderRadius:"100px",fontWeight:600,fontSize:"0.85rem",textDecoration:"none"}}>See the plan</Link>
+</div>
+)}
 <div style={{background:"var(--apricot)",borderRadius:"16px",padding:"36px",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"20px"}}>
 <div><span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem"}}>Current Base</span><h4 style={{fontFamily:"'Fraunces',serif",fontSize:"1.4rem",marginTop:"6px"}}>See where I am right now</h4></div>
 <Link href="/itinerary" style={{background:"var(--ink)",color:"var(--paper)",padding:"14px 26px",borderRadius:"100px",fontWeight:600,fontSize:"0.85rem",textDecoration:"none"}}>View Current Base</Link>
