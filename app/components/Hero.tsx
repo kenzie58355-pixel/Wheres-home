@@ -53,17 +53,34 @@ passport.
 </em>
 </h1>
 
-<p style={{ marginTop: "26px", maxWidth: "520px", fontSize: "1.05rem", lineHeight: 1.6, opacity: 0.8 }}>
-Training through {journey.current.country} now, with more of the route still unfolding, with Ginger riding shotgun.
-Follow the journey, then bring your own dog along with PawPass.
+<p style={{ marginTop: "26px", maxWidth: "580px", fontSize: "1.15rem", lineHeight: 1.6, fontWeight: 500 }}>
+Former collegiate wrestler and national qualifier, traveling the world with my standard poodle, Ginger, and building businesses from the road.
+</p>
+<p style={{ marginTop: "12px", maxWidth: "560px", fontSize: "1.02rem", lineHeight: 1.6, opacity: 0.8 }}>
+Based in {journey.current.city}, {journey.current.country}. I help people and their dogs move abroad without the chaos, with pet relocation help, custom itineraries, and real content from the road.
 </p>
 
 <div style={{ display: "flex", gap: "16px", marginTop: "40px", flexWrap: "wrap" }}>
 <Link
-href="/vlog"
+href="/work-with-us"
 style={{
 background: "var(--ink)",
 color: "var(--paper)",
+padding: "16px 30px",
+borderRadius: "100px",
+fontWeight: 600,
+fontSize: "0.95rem",
+cursor: "pointer",
+textDecoration: "none",
+}}
+>
+Work with me
+</Link>
+<Link
+href="/vlog"
+style={{
+border: "1.5px solid var(--ink)",
+color: "var(--ink)",
 padding: "16px 30px",
 borderRadius: "100px",
 fontWeight: 600,
@@ -90,6 +107,9 @@ textDecoration: "none",
 Explore PawPass
 </Link>
 </div>
+<Link href="/ecuador-dog-checklist" style={{ marginTop: "22px", fontFamily: "'Space Mono', monospace", fontSize: "0.78rem", color: "var(--terracotta)", fontWeight: 700, textDecoration: "none", width: "fit-content" }}>
+Free: how to leave Ecuador with your dog, the checklist {"\u2192"}
+</Link>
 </section>
 );
 }

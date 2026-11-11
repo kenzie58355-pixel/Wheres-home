@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import CurrentJourney from "../components/CurrentJourney";
+import Link from "next/link";
 
 const whatWeDo = [
 { icon: "✈️", title: "Travel & Relocation", desc: "Custom routes, research, logistics and real world assistance for people figuring out their next move." },
@@ -122,6 +123,8 @@ boxShadow: isSelected ? "0 12px 24px rgba(181,82,46,0.25)" : "none",
 <div style={{display:"flex",alignItems:"baseline",gap:"12px",flexWrap:"wrap",marginBottom:"18px"}}>
 <h3 style={{fontFamily:"'Fraunces',serif",fontSize:"1.5rem",fontWeight:600}}>{g.icon} {g.group}</h3>
 <span style={{fontSize:"0.88rem",opacity:0.7}}>{g.note}</span>
+{g.group === "Custom Itineraries" && <Link href="/itineraries" style={{fontFamily:"'Space Mono',monospace",fontSize:"0.75rem",color:"var(--terracotta)",fontWeight:700,textDecoration:"none"}}>See sample itineraries {"\u2192"}</Link>}
+{g.group === "Pet Relocation" && <Link href="/ecuador-dog-checklist" style={{fontFamily:"'Space Mono',monospace",fontSize:"0.75rem",color:"var(--terracotta)",fontWeight:700,textDecoration:"none"}}>Free Ecuador checklist {"\u2192"}</Link>}
 </div>
 <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:"20px"}}>
 {g.items.map((it, ii) => (

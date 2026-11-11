@@ -42,7 +42,9 @@ Vlog {openMenu === "vlog" ? "▴" : "▾"}
 <div>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.6,textTransform:"uppercase",letterSpacing:"0.06em",display:"block",marginBottom:"14px"}}>By Interest</span>
 <Link href="/training" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8,marginBottom:"8px"}}>Training and Gyms</Link>
-<Link href="/pawpass/explore" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8}}>Dog Friendly Spots</Link>
+<Link href="/pawpass/explore" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8,marginBottom:"8px"}}>Dog Friendly Spots</Link>
+<Link href="/itineraries" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8,marginBottom:"8px"}}>Sample Itineraries</Link>
+<Link href="/ecuador-dog-checklist" onClick={() => setOpenMenu(null)} style={{display:"block",color:"var(--ink)",textDecoration:"none",fontSize:"0.9rem",opacity:0.8}}>Free Ecuador Dog Checklist</Link>
 </div>
 </div>
 </div>

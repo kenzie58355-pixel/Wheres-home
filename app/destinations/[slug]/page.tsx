@@ -9,6 +9,19 @@ import { journey } from "../../data/journey";
 import { entries } from "../../journal/data";
 import { episodes } from "../../vlog/data";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+const { slug } = await params;
+const d = destinations.find((x) => x.slug === slug);
+if (!d) return {};
+const title = d.slug === "la-paz" ? "La Paz, Bolivia: The Trip That Did Not Happen" : d.city + ", " + d.country + " with a Dog: Dog-Friendly Travel Guide";
+return {
+title: title + " | Where's Home?",
+description: d.overview.slice(0, 155),
+openGraph: { title, description: d.overview.slice(0, 155) },
+};
+}
 
 export default async function Destination({ params }: { params: Promise<{ slug: string }> }) {
 const { slug } = await params;
