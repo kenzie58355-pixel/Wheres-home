@@ -50,18 +50,26 @@ MMAATHOME<br />× PAWPASS<br />EST. 2026
 <Link href="/destinations" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>Destinations</Link>
 <Link href="/journal" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>Journal</Link>
 <Link href="/pawpass" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>PawPass</Link>
-<Link href="/about" style={{display:"block",fontSize:"0.9rem",opacity:0.9,color:"inherit",textDecoration:"none"}}>About</Link>
+<Link href="/about" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>About</Link>
+<Link href="/privacy" style={{display:"block",fontSize:"0.9rem",opacity:0.9,color:"inherit",textDecoration:"none"}}>Privacy</Link>
+</div>
+<div>
+<h4 style={{fontFamily:"'Space Mono', monospace",fontSize:"0.7rem",opacity:0.6,marginBottom:"14px",textTransform:"uppercase",letterSpacing:"0.08em"}}>Work With Me</h4>
+<Link href="/work-with-us" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>Pet Relocation Help</Link>
+<Link href="/itineraries" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>Sample Itineraries</Link>
+<Link href="/ecuador-dog-checklist" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>Free Ecuador Dog Checklist</Link>
+<Link href="/work-with-us" style={{display:"block",fontSize:"0.9rem",opacity:0.9,color:"inherit",textDecoration:"none"}}>UGC for Brands</Link>
 </div>
 <div>
 <h4 style={{fontFamily:"'Space Mono', monospace",fontSize:"0.7rem",opacity:0.6,marginBottom:"14px",textTransform:"uppercase",letterSpacing:"0.08em"}}>Shop</h4>
+<span style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.55}}>The Dog Parent&apos;s Passport, coming soon</span>
 <a href="https://beacons.ai/mmaathome" target="_blank" rel="noopener noreferrer" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>Transformation Journal</a>
-<span style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.55}}>MMAatHome App (Aug 22)</span>
-<span style={{display:"block",fontSize:"0.9rem",opacity:0.55}}>Merch Drop (Aug 18)</span>
+<span style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.55}}>MMAatHome App, in App Store review</span>
+<span style={{display:"block",fontSize:"0.9rem",opacity:0.55}}>Merch, coming January 2027</span>
 </div>
 <div>
 <h4 style={{fontFamily:"'Space Mono', monospace",fontSize:"0.7rem",opacity:0.6,marginBottom:"14px",textTransform:"uppercase",letterSpacing:"0.08em"}}>Follow</h4>
-<a href="https://www.tiktok.com/@noplanbkenzie" target="_blank" rel="noopener noreferrer" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>TikTok, Kenzie</a>
-<a href="https://www.tiktok.com/@sipofgingerale" target="_blank" rel="noopener noreferrer" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>TikTok, Ginger</a>
+<a href="https://www.tiktok.com/@sipofgingerale" target="_blank" rel="noopener noreferrer" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>TikTok</a>
 <a href="https://www.instagram.com/mmaathome" target="_blank" rel="noopener noreferrer" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>Instagram</a>
 <a href="https://www.youtube.com/@MMAatHome-Kenzie" target="_blank" rel="noopener noreferrer" style={{display:"block",fontSize:"0.9rem",opacity:0.9,color:"inherit",textDecoration:"none"}}>YouTube</a>
 </div>

@@ -1,12 +1,13 @@
 ﻿import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import Link from "next/link";
 import CurrentJourney from "../components/CurrentJourney";
 import { journey } from "../data/journey";
 
 const days = [
-{ label: "Days 1 to 3", title: "Acclimate and Wander", desc: "Slow mornings settling into Cali, walks with Ginger, finding the neighborhood's rhythm after a long, chaotic travel day.", tags: "Dog Friendly, Cafe Nearby" },
-{ label: "Weeks 1 to 4", title: "Teaching and Exploring", desc: "Trips out to places like Chinchina for teaching, day hikes when they come up last minute, and figuring out Cali one neighborhood at a time.", tags: "Culture, Field Trips" },
-{ label: "Final Weeks", title: "Wind Down and Pack", desc: "Last favorite spots, wrapping up, and prepping for the next move on the route.", tags: "Familiar Spots, Packing" },
+{ label: "Every week", title: "The home base routine", desc: "Training, school, remote work, and building Where's Home, with long walks around the city for Ginger.", tags: "Training, Work, School" },
+{ label: "Weekends", title: "Exploring Cali", desc: "Cafes with patios, parks, and day trips outside the city, the same spots that end up in the guides on this site.", tags: "Dog Friendly, Day Trips" },
+{ label: "Next", title: "Regional loops", desc: "Trips out to Peru, Bolivia, and Chile, coming back to Cali in between instead of moving everything every time.", tags: "Peru, Bolivia, Chile" },
 ];
 
 export default function Itinerary() {
@@ -28,7 +29,7 @@ return (
 <div style={{background:"var(--paper-2)",borderRadius:"18px",padding:"32px",display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:"24px"}}>
 <div>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.7,display:"block",marginBottom:"6px"}}>Location</span>
-<strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem"}}>{journey.current.neighborhood}, {journey.current.city}, {journey.current.country}</strong>
+<strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem"}}>{journey.current.city}, {journey.current.country}</strong>
 </div>
 <div>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.7,display:"block",marginBottom:"6px"}}>Dates</span>
@@ -36,12 +37,12 @@ return (
 </div>
 <div>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.65rem",opacity:0.7,display:"block",marginBottom:"6px"}}>Status</span>
-<strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem"}}>Settled In</strong>
+<strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.2rem"}}>Home base</strong>
 </div>
 </div>
 </section>
 <section style={{maxWidth:"1200px",margin:"0 auto",padding:"20px 48px 70px"}}>
-<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.08em",color:"var(--terracotta)",display:"block",marginBottom:"10px"}}>What This Stay Looks Like</span>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.08em",color:"var(--terracotta)",display:"block",marginBottom:"10px"}}>Life at Home Base</span>
 <h2 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.8rem,3.4vw,2.6rem)",fontWeight:600,marginBottom:"36px"}}>A rough shape, not a rigid plan.</h2>
 {days.map((d, i) => (
 <div key={i} style={{display:"grid",gridTemplateColumns:"140px 1fr",gap:"24px",marginBottom:"36px"}}>
@@ -56,13 +57,13 @@ return (
 </section>
 <section style={{background:"var(--teal)",color:"#F5EEDF",borderRadius:"20px",margin:"0 24px",padding:"50px 48px"}}>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.08em",color:"var(--apricot)",display:"block",marginBottom:"10px"}}>Next Up</span>
-<h2 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.6rem,3vw,2.2rem)",fontWeight:600}}>{journey.next.flag} {journey.next.country} is next on the route.</h2>
-<p style={{marginTop:"12px",opacity:0.9}}>Dates and city TBD, this page will update the moment I&apos;m settled.</p>
+<h2 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.6rem,3vw,2.2rem)",fontWeight:600}}>Peru, Bolivia, and Chile are the next loop.</h2>
+<p style={{marginTop:"12px",opacity:0.9}}>Dates are not set yet. They go here as soon as they are.</p>
 </section>
 <section style={{maxWidth:"1200px",margin:"0 auto",padding:"70px 48px 90px"}}>
 <div style={{background:"var(--apricot)",borderRadius:"16px",padding:"32px",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"16px"}}>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem"}}>Want a personalized guide for wherever you&apos;re headed?</span>
-<div style={{background:"var(--ink)",color:"var(--paper)",padding:"14px 26px",borderRadius:"100px",fontWeight:600,fontSize:"0.85rem"}}>Request Custom Itinerary</div>
+<Link href="/work-with-us" style={{background:"var(--ink)",color:"var(--paper)",padding:"14px 26px",borderRadius:"100px",fontWeight:600,fontSize:"0.85rem",textDecoration:"none"}}>Request Custom Itinerary</Link>
 </div>
 </section>
 <Footer />
