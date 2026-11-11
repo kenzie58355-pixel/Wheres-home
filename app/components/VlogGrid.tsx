@@ -69,12 +69,13 @@ cursor: "pointer",
 <div
 style={{
 height: "200px",
-background: ep.thumb,
+background: "linear-gradient(0deg, rgba(20,15,10,0.8), rgba(20,15,10,0) 60%), " + ep.thumb,
 display: "flex",
 flexDirection: "column",
-alignItems: "center",
-justifyContent: "center",
-gap: "6px",
+alignItems: "flex-start",
+justifyContent: "flex-end",
+gap: "4px",
+padding: "18px 22px",
 }}
 >
 <span

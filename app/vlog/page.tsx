@@ -24,7 +24,7 @@ const isLive = daysLeft <= 0;
 return (
 <Link key={i} href={"/vlog/" + ep.slug} style={{textDecoration:"none",color:"inherit"}}>
 <div style={{background:"var(--paper-2)",borderRadius:"18px",overflow:"hidden",opacity:isLive?1:0.75,border:isLive?"none":"1px dashed rgba(43,36,32,0.15)",cursor:"pointer"}}>
-<div style={{height:"200px",background:ep.thumb,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:"6px"}}>
+<div style={{height:"200px",background:"linear-gradient(0deg, rgba(20,15,10,0.8), rgba(20,15,10,0) 60%), " + ep.thumb,display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"flex-end",gap:"4px",padding:"18px 22px"}}>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.62rem",opacity:0.9,color:"var(--cream-text)",textTransform:"uppercase",letterSpacing:"0.06em"}}>Drop date, {dropLabel}</span>
 <span style={{fontFamily:"'Fraunces',serif",fontSize:"1.1rem",fontWeight:600,color:"var(--cream-text)"}}>{isLive ? "Live now" : `Drops in ${daysLeft} ${daysLeft===1?"day":"days"}`}</span>
 </div>

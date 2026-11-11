@@ -63,6 +63,18 @@ return (
 </div>
 </section>
 
+{dest.sections && dest.sections.length > 0 && (
+<section style={{maxWidth:"760px",margin:"0 auto",padding:"0 48px 70px"}}>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.08em",color:"var(--terracotta)",display:"block",marginBottom:"24px"}}>The Guide</span>
+{dest.sections.map((sec, i) => (
+<div key={i} style={{marginBottom:"36px"}}>
+<h3 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.3rem,2.4vw,1.7rem)",fontWeight:600,marginBottom:"12px"}}>{sec.title}</h3>
+<p style={{opacity:0.85,lineHeight:1.75}}>{sec.text}</p>
+</div>
+))}
+</section>
+)}
+
 {dest.ginger && (
 <section style={{maxWidth:"1200px",margin:"0 auto",padding:"0 48px 70px"}}>
 <div style={{background:"var(--apricot)",borderRadius:"18px",padding:"40px"}}>

@@ -15,6 +15,29 @@ spots: [
 { name: "Jardin Plaza and the surrounding area", badge: "Shopping", note: "A major mall in Ciudad Jardin with dog-friendly outdoor areas nearby, easy to combine with a walk.", mapQuery: "Jardin Plaza, Cali, Colombia" },
 { name: "Peluqueria Canina Mundo Peludo", badge: "Grooming", note: "Cra. 38c #1-54, Nueva Granada. A genuinely great groom, full write-up in the journal.", mapQuery: "Peluqueria Canina Mundo Peludo, Cra. 38c #1-54, Cali, Colombia" },
 { name: "The tunnels of Villamaria", badge: "Hike", note: "A last-minute hike that ended at a waterfall Ginger swam in. One of the best afternoons of the trip.", mapQuery: "Tunel de Villamaria, Caldas, Colombia" },
+{ name: "La Marianela Coffee Shop", badge: "Café", note: "A breakfast and coffee spot in Granada with an indoor floor and a breezy upstairs terrace, listed as dog friendly. One of the best breakfasts in the city.", mapQuery: "La Marianela Coffee Shop, Av. 9A #14n-73, Granada, Cali, Colombia" },
+{ name: "Tierradentro Café & Co", badge: "Café", note: "A big leafy garden patio in San Antonio with its own café dog. Great for a long coffee with a dog at your feet.", mapQuery: "Tierradentro Café & Co, Cra. 12 #2-81, Cali, Colombia" },
+{ name: "Café Valparaíso Pance", badge: "Café", note: "Mostly outdoor seating under the trees by a pond in Pance, with a pet-friendly terrace. Worth the drive south on a weekend.", mapQuery: "Café Valparaiso Pance, Cra. 125 #23 A 58, Cali, Colombia" },
+{ name: "Bulevar del Río", badge: "Walk", note: "The pedestrian riverside boulevard downtown, wide, shaded, and easy for a leashed walk, with the Gato del Río sculptures a short stroll north.", mapQuery: "Bulevar del Rio, Cali, Colombia" },
+],
+},
+"Puerto López": {
+flag: "🇪🇨",
+spots: [
+{ name: "Playa de Puerto López and the malecón", badge: "Beach", note: "Wide sand, fishing boats coming in, and cool mornings. Go early with a dog, before the beach and the waterfront restaurants fill up.", mapQuery: "Malecon de Puerto Lopez, Manabi, Ecuador" },
+{ name: "Playa de Ayampe", badge: "Beach", note: "Our home base. A quiet surf beach at the end of the road, about ten kilometers south of Puerto López, where Ginger had the ocean at the end of every walk.", mapQuery: "Playa de Ayampe, Manabi, Ecuador" },
+{ name: "La Cabaña D'Chuky", badge: "Food", note: "A family-run, open-air seafood spot on the malecón with fresh fish, patacones, and great juices. Open-air, so ask and sit outside with your dog.", mapQuery: "La Cabana D'Chuky, Malecon Julio Izurieta, Puerto Lopez, Ecuador" },
+{ name: "Hostería La Terraza", badge: "Stay", note: "Listed as welcoming dogs of any size at no extra fee, with food and water bowls in the room. A solid pick if you need a dog-friendly bed in town.", mapQuery: "Hosteria La Terraza, Puerto Lopez, Ecuador" },
+{ name: "Animal Care Puerto López", badge: "Avoid", note: "The clinic that handled Ginger's export certificate. Shifting stories, a surprise charge, and her documents held until I paid. Full story in the journal.", mapQuery: "Animal Care, Puerto Lopez, Manabi, Ecuador" },
+],
+},
+Manta: {
+flag: "🇪🇨",
+spots: [
+{ name: "Playa Santa Marianita", badge: "Beach", note: "A quieter kitesurf beach about fifteen minutes south of Manta, with plenty of space and people who bring their dogs.", mapQuery: "Playa Santa Marianita, Manabi, Ecuador" },
+{ name: "Playa El Murciélago", badge: "Beach", note: "Manta's big city beach, with lifeguards, showers, and a malecón full of food. It gets busy fast, so go early with a dog.", mapQuery: "Playa El Murcielago, Manta, Ecuador" },
+{ name: "Carbono Resto Café", badge: "Café", note: "Listed as a dog café, with great coffee and food on the San Mateo road. A good stop before a flight out of Manta.", mapQuery: "Carbono Resto Cafe, Conector Via Circunvalacion San Mateo, Manta, Ecuador" },
+{ name: "Agrocalidad Manta", badge: "Paperwork", note: "The office where export certificates for this part of the coast get picked up. If you are leaving Ecuador with a pet, you will probably end up here.", mapQuery: "Agrocalidad, Manta, Manabi, Ecuador" },
 ],
 },
 Dallas: {
