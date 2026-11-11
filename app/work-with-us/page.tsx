@@ -13,6 +13,35 @@ const whatWeDo = [
 { icon: "🤝", title: "Collaborations", desc: "For brands, hotels, destinations, tourism companies, pet businesses and anyone with an idea that belongs in the journey." },
 ];
 
+const packages = [
+{
+group: "Pet Relocation",
+icon: "\u{1F43E}",
+note: "For anyone moving countries with a dog and trying not to lose their mind over paperwork.",
+items: [
+{ name: "Quick Call", price: "$45", unit: "one time", points: ["45-minute video call about your route", "Written checklist sent after the call", "What to ask your vet, and when"] },
+{ name: "Full Paperwork Plan", price: "$150", unit: "one time", points: ["Step-by-step timeline for your exact route", "Every document and vet step, in order", "Airline rules for flying with your dog", "Ready-to-send Spanish messages for vets", "WhatsApp support until you fly"] },
+],
+},
+{
+group: "Custom Itineraries",
+icon: "\u{1F5FA}\u{FE0F}",
+note: "Built from real travel, with your budget, your pace, and your dog in mind.",
+items: [
+{ name: "Custom Itinerary", price: "$30", unit: "per day, 3-day minimum", points: ["Day-by-day plan for your trip", "Dog-friendly stays and spots included", "Budget and getting-around notes", "One round of changes", "Weekend $90, full week $210"] },
+],
+},
+{
+group: "UGC for Brands",
+icon: "\u{1F4F8}",
+note: "Real travel content from the road, made for brands that fit the journey.",
+items: [
+{ name: "Single Video", price: "$175", unit: "per video", points: ["One short-form video", "One round of revisions", "Use on your brand's own social pages"] },
+{ name: "3-Video Bundle", price: "$450", unit: "3 videos", points: ["Three short-form videos", "One round of revisions each", "Paid ad usage +30%", "Raw footage +$50"] },
+],
+},
+];
+
 export default function WorkWithUs() {
 const [selected, setSelected] = useState<string | null>(null);
 const formRef = useRef<HTMLDivElement>(null);
@@ -80,6 +109,48 @@ boxShadow: isSelected ? "0 12px 24px rgba(181,82,46,0.25)" : "none",
 );
 })}
 </div>
+</section>
+
+<section style={{maxWidth:"1200px",margin:"0 auto",padding:"0 48px 90px"}}>
+<div style={{textAlign:"center",marginBottom:"40px"}}>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.75rem",textTransform:"uppercase",letterSpacing:"0.1em",color:"var(--terracotta)"}}>Packages and Pricing</span>
+<h2 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(1.8rem,3.6vw,2.6rem)",fontWeight:600,marginTop:"12px"}}>Clear prices. No surprise fees.</h2>
+<p style={{opacity:0.75,marginTop:"10px",maxWidth:"560px",marginLeft:"auto",marginRight:"auto"}}>Learned the hard way in Ecuador. What you see here is what you pay.</p>
+</div>
+{packages.map((g, gi) => (
+<div key={gi} style={{marginBottom:"44px"}}>
+<div style={{display:"flex",alignItems:"baseline",gap:"12px",flexWrap:"wrap",marginBottom:"18px"}}>
+<h3 style={{fontFamily:"'Fraunces',serif",fontSize:"1.5rem",fontWeight:600}}>{g.icon} {g.group}</h3>
+<span style={{fontSize:"0.88rem",opacity:0.7}}>{g.note}</span>
+</div>
+<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:"20px"}}>
+{g.items.map((it, ii) => (
+<div key={ii} style={{background:"var(--paper-2)",borderRadius:"18px",padding:"30px",display:"flex",flexDirection:"column"}}>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.06em",opacity:0.7}}>{it.name}</span>
+<div style={{display:"flex",alignItems:"baseline",gap:"8px",margin:"10px 0 18px"}}>
+<span style={{fontFamily:"'Fraunces',serif",fontSize:"2.4rem",fontWeight:600,color:"var(--terracotta)"}}>{it.price}</span>
+<span style={{fontSize:"0.8rem",opacity:0.7}}>{it.unit}</span>
+</div>
+<ul style={{listStyle:"none",padding:0,margin:"0 0 24px",display:"flex",flexDirection:"column",gap:"8px",fontSize:"0.9rem",flexGrow:1}}>
+{it.points.map((pt, pi) => (
+<li key={pi} style={{display:"flex",gap:"8px"}}><span style={{color:"var(--terracotta)"}}>{"\u2713"}</span><span>{pt}</span></li>
+))}
+</ul>
+<button onClick={() => pickService(g.group + ": " + it.name + " (" + it.price + ")")} style={{background:"var(--ink)",color:"var(--paper)",padding:"14px",borderRadius:"100px",border:"none",fontWeight:600,fontSize:"0.85rem",cursor:"pointer"}}>{"Book this \u2192"}</button>
+</div>
+))}
+</div>
+</div>
+))}
+<div style={{background:"var(--apricot)",borderRadius:"18px",padding:"32px",marginTop:"10px"}}>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.08em",display:"block",marginBottom:"14px"}}>How booking works</span>
+<div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:"18px",fontSize:"0.92rem"}}>
+<div><strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.1rem",display:"block",marginBottom:"4px"}}>1. Tap Book this</strong>Fill in the form below with your plan.</div>
+<div><strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.1rem",display:"block",marginBottom:"4px"}}>2. Get a PayPal invoice</strong>Calls and paperwork plans are paid upfront. Itineraries and UGC are 50% upfront.</div>
+<div><strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.1rem",display:"block",marginBottom:"4px"}}>3. We get to work</strong>You hear back within 48 hours to schedule or start.</div>
+</div>
+</div>
+<p style={{fontSize:"0.75rem",opacity:0.6,marginTop:"18px",lineHeight:1.6,maxWidth:"760px"}}>Pet relocation help is guidance based on real experience moving a dog between countries, not veterinary or legal advice. Entry rules change often, so always confirm requirements with the official authorities, your airline, and a registered vet before you travel.</p>
 </section>
 
 <section style={{background:"var(--teal)",color:"#F5EEDF",borderRadius:"20px",margin:"0 24px",padding:"90px 48px",textAlign:"center"}}>

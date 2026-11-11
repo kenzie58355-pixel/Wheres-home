@@ -17,6 +17,9 @@ if (/^[A-Za-z0-9_-]{6,}$/.test(url)) return url;
 return null;
 }
 
+// Recheck hourly so release countdowns and "Live now" update on their own
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
 const { slug } = await params;
 const ep = episodes.find((e) => e.slug === slug);

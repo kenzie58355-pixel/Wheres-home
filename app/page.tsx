@@ -11,6 +11,9 @@ import Journal from "./components/Journal";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 
+// Recheck hourly so release countdowns and "Live now" update on their own
+export const revalidate = 3600;
+
 export default function Home() {
 return (
 <main>

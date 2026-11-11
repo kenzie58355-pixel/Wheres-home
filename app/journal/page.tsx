@@ -3,6 +3,9 @@ import Footer from "../components/Footer";
 import Link from "next/link";
 import { entries } from "./data";
 
+// Recheck hourly so release countdowns and "Live now" update on their own
+export const revalidate = 3600;
+
 export default function Journal() {
 const now = new Date();
 const visible = entries.filter((e) => e.destination !== "la-paz");
