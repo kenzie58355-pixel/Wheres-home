@@ -62,9 +62,9 @@ MMAATHOME<br />× PAWPASS<br />EST. 2026
 </div>
 <div>
 <h4 style={{fontFamily:"'Space Mono', monospace",fontSize:"0.7rem",opacity:0.6,marginBottom:"14px",textTransform:"uppercase",letterSpacing:"0.08em"}}>Shop</h4>
-<span style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.55}}>The Dog Parent&apos;s Passport, coming soon</span>
+<a href="https://shop.beacons.ai/mmaathome/9b8c2ab7-ee7b-4c78-93e6-f6355efd0556" target="_blank" rel="noopener noreferrer" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>The Dog Parent&apos;s Passport, $17</a>
 <a href="https://beacons.ai/mmaathome" target="_blank" rel="noopener noreferrer" style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9,color:"inherit",textDecoration:"none"}}>Transformation Journal</a>
-<span style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.55}}>MMAatHome App, in App Store review</span>
+<span style={{display:"block",fontSize:"0.9rem",marginBottom:"10px",opacity:0.9}}>MMAatHome App, now on the App Store</span>
 <span style={{display:"block",fontSize:"0.9rem",opacity:0.55}}>Merch, coming January 2027</span>
 </div>
 <div>

@@ -10,7 +10,7 @@ return (
 <div style={{maxWidth:"1200px",margin:"0 auto",padding:"20px 48px 0"}}>
 <CurrentJourney />
 </div>
-<section style={{background:"linear-gradient(135deg,var(--terracotta),var(--stamp-red))",color:"#F5EEDF",borderRadius:"20px",margin:"20px 24px 0",padding:"110px 48px",textAlign:"center",position:"relative",overflow:"hidden",overflow:"hidden"}}>
+<section style={{background:"linear-gradient(135deg,var(--terracotta),var(--stamp-red))",color:"#F5EEDF",borderRadius:"20px",margin:"20px 24px 0",padding:"110px 48px",textAlign:"center",position:"relative",overflow:"hidden"}}>
 <div style={{position:"absolute",top:"-50px",right:"-30px",fontSize:"11rem",opacity:0.1}}>🔨</div>
 <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.8rem",opacity:0.9,letterSpacing:"0.12em"}}>WHY PAWPASS EXISTS</span>
 <h1 style={{fontFamily:"'Fraunces',serif",fontSize:"clamp(2.6rem,6.5vw,4.6rem)",fontWeight:600,maxWidth:"780px",margin:"24px auto",lineHeight:1.05,position:"relative"}}>I couldn&apos;t find the information I needed.<br/>So I started building it.</h1>

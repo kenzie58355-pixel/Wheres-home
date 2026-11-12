@@ -116,6 +116,19 @@ return (
 <div><strong style={{fontFamily:"'Fraunces',serif",fontSize:"1.1rem",display:"block",marginBottom:"4px"}}>3. We get to work</strong>You hear back within 48 hours to schedule or start.</div>
 </div>
 </div>
+<div style={{marginTop:"20px"}}>
+<div style={{background:"var(--teal)",color:"var(--paper)",borderRadius:"18px",padding:"34px",display:"flex",gap:"28px",alignItems:"center",flexWrap:"wrap"}}>
+<div style={{flex:"0 0 auto",width:"110px",height:"165px",borderRadius:"6px",background:"linear-gradient(180deg,#7c9c96 0%,#1E4A47 70%)",boxShadow:"0 14px 28px rgba(0,0,0,0.35)",display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"12px",border:"1px solid rgba(247,242,231,0.25)"}}>
+<span style={{fontFamily:"'Fraunces',serif",fontWeight:700,fontSize:"0.95rem",lineHeight:1.05}}>The Dog Parent&apos;s <em style={{color:"var(--apricot)"}}>Passport</em></span>
+</div>
+<div style={{flex:"1 1 260px"}}>
+<span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7rem",textTransform:"uppercase",letterSpacing:"0.06em",color:"var(--apricot)"}}>The full guide, $17</span>
+<h3 style={{fontFamily:"'Fraunces',serif",fontSize:"1.5rem",margin:"6px 0 10px"}}>The Dog Parent&apos;s Passport</h3>
+<p style={{fontSize:"0.92rem",opacity:0.9,lineHeight:1.6,marginBottom:"20px"}}>Everything I wish I had before moving Ginger between countries. Step-by-step paperwork for Colombia and Ecuador, copy-paste Spanish messages for vets and airlines, the red flags that cost us, and printable checklists. Instant PDF download.</p>
+<a href="https://shop.beacons.ai/mmaathome/9b8c2ab7-ee7b-4c78-93e6-f6355efd0556" target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"var(--apricot)",color:"var(--ink)",padding:"14px 26px",borderRadius:"100px",fontWeight:600,fontSize:"0.9rem",textDecoration:"none"}}>Get the guide, $17</a>
+</div>
+</div>
+</div>
 <p style={{fontSize:"0.75rem",opacity:0.6,marginTop:"18px",lineHeight:1.6,maxWidth:"760px"}}>Pet relocation help is guidance based on real experience moving a dog between countries, not veterinary or legal advice. Entry rules change often, so always confirm requirements with the official authorities, your airline, and a registered vet before you travel.</p>
 </section>
 

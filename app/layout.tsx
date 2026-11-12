@@ -14,6 +14,9 @@ subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
+metadataBase: new URL("https://wheres-home.vercel.app"),
+openGraph: { type: "website", siteName: "Where's Home?" },
+twitter: { card: "summary_large_image" },
 title: "Where's Home? | Traveling and Moving Abroad with a Dog",
 description: "Kenzie and her standard poodle Ginger, traveling the world from a home base in Cali, Colombia. Dog-friendly city guides, sample itineraries, pet relocation help, and real stories from moving abroad with a dog.",
 icons: {
